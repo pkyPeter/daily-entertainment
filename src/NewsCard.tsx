@@ -117,6 +117,96 @@ export const NewsCard: React.FC<NewsCardProps> = ({
 
   return (
     <article className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-lg hover:border-gray-300 transition-all duration-200">
+      {/* 狀態管理區塊（置頂） */}
+      {onStatusChange && (
+        <div className="mb-4 pb-3 border-b border-gray-200">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-sm font-medium text-gray-700">狀態:</span>
+            <span className={`px-2 py-1 rounded-full text-xs font-medium cursor-pointer ${
+              currentStatus === 'unprocessed' ? 'bg-gray-100 text-gray-600' :
+              currentStatus === 'selected' ? 'bg-blue-100 text-blue-600' :
+              currentStatus === 'completed' ? 'bg-green-100 text-green-600' :
+              'bg-red-100 text-red-600'
+            }`}>
+              {currentStatus === 'unprocessed' ? '未處理' :
+               currentStatus === 'selected' ? '已選擇' :
+               currentStatus === 'completed' ? '處理完畢' :
+               '不採用'}
+            </span>
+          </div>
+          
+          <div className="flex flex-wrap gap-2">
+            {currentStatus === 'unprocessed' && (
+              <>
+                <Button
+                  onClick={() => onStatusChange(newsId, 'selected')}
+                  variant="blue"
+                  icon={
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  }
+                >
+                  選擇
+                </Button>
+                <Button
+                  onClick={() => onStatusChange(newsId, 'rejected')}
+                  variant="red"
+                  icon={
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  }
+                >
+                  不採用
+                </Button>
+              </>
+            )}
+            
+            {currentStatus === 'selected' && (
+              <>
+                <Button
+                  onClick={() => onStatusChange(newsId, 'completed')}
+                  variant="green"
+                  icon={
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  }
+                >
+                  處理完畢
+                </Button>
+                <Button
+                  onClick={() => onStatusChange(newsId, 'unprocessed')}
+                  variant="gray"
+                  icon={
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                    </svg>
+                  }
+                >
+                  回到未處理
+                </Button>
+              </>
+            )}
+            
+            {(currentStatus === 'completed' || currentStatus === 'rejected') && (
+              <Button
+                onClick={() => onStatusChange(newsId, 'unprocessed')}
+                variant="gray"
+                icon={
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                  </svg>
+                }
+              >
+                重新處理
+              </Button>
+            )}
+          </div>
+        </div>
+      )}
+      
       <div className="flex gap-4">
         {/* 主要內容 */}
         <div className="flex-1 min-w-0">
@@ -294,96 +384,6 @@ export const NewsCard: React.FC<NewsCardProps> = ({
                 </>
               )}
             </div>
-            
-            {/* 狀態管理按鈕 */}
-            {onStatusChange && (
-              <div className="mt-3 pt-3 border-t border-gray-200">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-sm font-medium text-gray-700">狀態:</span>
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    currentStatus === 'unprocessed' ? 'bg-gray-100 text-gray-600' :
-                    currentStatus === 'selected' ? 'bg-blue-100 text-blue-600' :
-                    currentStatus === 'completed' ? 'bg-green-100 text-green-600' :
-                    'bg-red-100 text-red-600'
-                  }`}>
-                    {currentStatus === 'unprocessed' ? '未處理' :
-                     currentStatus === 'selected' ? '已選擇' :
-                     currentStatus === 'completed' ? '處理完畢' :
-                     '不採用'}
-                  </span>
-                </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  {currentStatus === 'unprocessed' && (
-                    <>
-                      <Button
-                        onClick={() => onStatusChange(newsId, 'selected')}
-                        variant="blue"
-                        icon={
-                          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                        }
-                      >
-                        選擇
-                      </Button>
-                      <Button
-                        onClick={() => onStatusChange(newsId, 'rejected')}
-                        variant="red"
-                        icon={
-                          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                        }
-                      >
-                        不採用
-                      </Button>
-                    </>
-                  )}
-                  
-                  {currentStatus === 'selected' && (
-                    <>
-                      <Button
-                        onClick={() => onStatusChange(newsId, 'completed')}
-                        variant="green"
-                        icon={
-                          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        }
-                      >
-                        處理完畢
-                      </Button>
-                      <Button
-                        onClick={() => onStatusChange(newsId, 'unprocessed')}
-                        variant="gray"
-                        icon={
-                          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
-                          </svg>
-                        }
-                      >
-                        回到未處理
-                      </Button>
-                    </>
-                  )}
-                  
-                  {(currentStatus === 'completed' || currentStatus === 'rejected') && (
-                    <Button
-                      onClick={() => onStatusChange(newsId, 'unprocessed')}
-                      variant="gray"
-                      icon={
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
-                        </svg>
-                      }
-                    >
-                      重新處理
-                    </Button>
-                  )}
-                </div>
-              </div>
-            )}
             {/* AI 建議引導句區塊（在工具區內） */}
             {news.suggestLine && (
               <div className="mt-4 p-3 bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg">
