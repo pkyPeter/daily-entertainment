@@ -102,7 +102,6 @@ async function scrapeYahooEntertainment() {
   const results = [];
   for (const link of links) {
     await new Promise((r) => setTimeout(r, 1000)); // 每則新聞間隔2秒
-    if (results.length >= 20) break;
 
     console.log(`🔗 處理新聞：${link}`);
     try {
@@ -230,7 +229,7 @@ async function scrapeYahooEntertainment() {
       suggestLine: response.text,
     });
 
-    if (results.length >= 10) break;
+    if (results.length >= 20) break;
   }
 
   await browser.close();
@@ -238,7 +237,7 @@ async function scrapeYahooEntertainment() {
   // 儲存結果到 JSON 檔案
   await saveToJsonFile(results);
 
-  console.log("✅ 已產出 10 則新聞：output.json");
+  console.log("✅ 已產出 20 則新聞：output.json");
 }
 
 scrapeYahooEntertainment();
