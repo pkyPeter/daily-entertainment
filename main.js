@@ -128,7 +128,7 @@ async function scrapeYahooEntertainment() {
     results.push({
       link,
       headLine,
-      publishDate: new Date(datePublished).toLocaleString("zh-TW"),
+      publishDate: datePublished,
       source,
       content,
       imageUrl,
