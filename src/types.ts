@@ -6,6 +6,8 @@ export interface NewsItem {
   content: string;
   imageUrl: string;
   imageProvider: string;
+  authorName: string;
+  newsProvider: string;
 }
 
 export interface NewsData {

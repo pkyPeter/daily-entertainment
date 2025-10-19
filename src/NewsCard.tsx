@@ -45,11 +45,19 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
             </a>
           </h2>
           
-          {/* 發布時間 */}
-          <div className="mb-3">
+          {/* 發布時間與新聞來源 */}
+          <div className="mb-3 flex flex-wrap items-center gap-2">
             <time className="text-xs text-gray-500 font-medium">
               {formatDate(news.publishDate)}
             </time>
+            {news.newsProvider && (
+              <>
+                <span className="text-xs text-gray-400">•</span>
+                <span className="text-xs text-blue-600 font-medium">
+                  {news.newsProvider}
+                </span>
+              </>
+            )}
           </div>
           
           {/* 可收合的內容 */}
@@ -97,22 +105,13 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
         
         {/* 右側圖片區域 */}
         {news.imageUrl && (
-          <div className="flex-shrink-0 text-center">
-            <img 
-              src={news.imageUrl} 
+          <div className="w-80 flex flex-col items-center space-y-2">
+            <img
+              src={news.imageUrl}
               alt={news.headLine}
-              className="w-20 h-20 object-cover rounded-lg mb-2"
-              loading="lazy"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-              }}
+              className="max-w-72 max-h-72 object-contain rounded-lg mx-auto"
             />
-            {news.imageProvider && (
-              <div className="text-xs text-gray-500 italic max-w-20 leading-tight">
-                圖片來源: {news.imageProvider}
-              </div>
-            )}
+            <p className="text-xs text-gray-500 text-center break-words">{news.imageProvider || '圖片來源'}</p>
           </div>
         )}
       </div>

@@ -146,20 +146,24 @@ function App() {
 
         {!loading && !error && newsData && (
           <>
-            <header className="bg-white border-b border-gray-200 px-4 lg:px-8 py-6">
-              <h2 className="text-xl lg:text-2xl font-bold text-gray-900">
-                {formatDateDisplay(selectedDate)}
-              </h2>
-              <p className="text-gray-600 mt-1">
-                共 {newsData.newsInfo.length} 則新聞
-              </p>
+            <header className="bg-white border-b border-gray-200 px-4 lg:px-8 py-4">
+              <div className="flex items-center justify-between">
+                <h2 className="text-xl lg:text-2xl font-bold text-gray-900">
+                  {formatDateDisplay(selectedDate)}
+                </h2>
+                <p className="text-gray-600 text-sm lg:text-base">
+                  共 {newsData.newsInfo.length} 則新聞
+                </p>
+              </div>
             </header>
 
             <div className="p-4 lg:p-8">
               <div className="space-y-6">
-                {newsData.newsInfo.map((news, index) => (
-                  <NewsCard key={`${news.link}-${index}`} news={news} />
-                ))}
+                {newsData.newsInfo
+                  .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+                  .map((news, index) => (
+                    <NewsCard key={`${news.link}-${index}`} news={news} />
+                  ))}
               </div>
             </div>
           </>
