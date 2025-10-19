@@ -44,6 +44,43 @@ async function scrapeYahooEntertainment() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
+  // 娛樂即時頁面
+  console.log("🔍 開始爬取 Yahoo 娛樂即時新聞...");
+  await page.goto("https://tw.news.yahoo.com/entertainment/archive/", {
+    waitUntil: "domcontentloaded",
+    timeout: 60000, // 可加長 timeout
+  });
+
+  console.log("� 滾動頁面載入更多新聞...");
+  // 滾動到底部兩次以載入更多新聞
+  for (let i = 1; i <= 2; i++) {
+    console.log(`🔄 第 ${i} 次滾動到底部`);
+    await page.evaluate(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+    // 等待新內容載入
+    await page.waitForTimeout(2000);
+  }
+
+  console.log("�📄 抓取新聞連結...");
+  // 抓出所有新聞連結
+  const archiveLinksWithoutDomain = await page.$$eval("#stream-container-scroll-template a", (as) =>
+    as
+      .map((a) => a.href)
+      .filter(
+        (href) => href.includes("html")
+      )
+  );
+
+  const archiveLinks = archiveLinksWithoutDomain.map((href) =>
+    href.includes("tw.news.yahoo.com")
+      ? href
+      : `https://tw.news.yahoo.com${href}`
+  );
+
+  console.log(`找到 ${archiveLinks.length} 則新聞連結`);
+
+
   console.log("🔍 開始爬取 Yahoo 娛樂新聞...");
   await page.goto("https://tw.news.yahoo.com/entertainment/", {
     waitUntil: "domcontentloaded",
@@ -92,7 +129,7 @@ async function scrapeYahooEntertainment() {
   console.log(
     `分別找到 ${topLinks.length} 則上方新聞連結 和 ${moreLinks.length} 則更多新聞連結 和 ${jpKrLins.length} 則日韓新聞連結`
   );
-  const allLinks = topLinks.concat(moreLinks).concat(jpKrLins);
+  const allLinks = topLinks.concat(moreLinks).concat(jpKrLins).concat(archiveLinks);
   console.log(`合併後找到 ${allLinks.length} 則新聞連結`);
 
   // 去除重複的連結
