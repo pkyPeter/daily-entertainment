@@ -2,8 +2,8 @@ name: Generate Daily News Data
 
 on:
   schedule:
-    # 每天早上 9:00 UTC (台灣時間 17:00) 自動執行
-    - cron: '35 9 * * *'
+    # 每天早上 11:00 UTC (台灣時間 19:00) 自動執行
+    - cron: '35 11 * * *'
   workflow_dispatch: # 允許手動觸發
 
 permissions:
