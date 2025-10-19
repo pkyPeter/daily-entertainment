@@ -274,7 +274,7 @@ async function scrapeYahooEntertainment() {
       suggestLine: response.text,
     });
 
-    if (results.length >= 20) break;
+    if (results.length >= 30) break;
   }
 
   await browser.close();
