@@ -2,7 +2,7 @@ import React from 'react';
 
 interface ButtonProps {
   onClick: () => void;
-  variant?: 'gray' | 'green' | 'blue';
+  variant?: 'gray' | 'green' | 'blue' | 'red';
   children: React.ReactNode;
   icon?: React.ReactNode;
 }
@@ -19,6 +19,8 @@ export const Button: React.FC<ButtonProps> = ({
         return 'bg-green-100 hover:bg-green-200 text-green-700';
       case 'blue':
         return 'bg-blue-100 hover:bg-blue-200 text-blue-700';
+      case 'red':
+        return 'bg-red-100 hover:bg-red-200 text-red-700';
       default:
         return 'bg-gray-100 hover:bg-gray-200 text-gray-700';
     }

@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import type { NewsData } from './types'
+import { useState, useEffect, useCallback } from 'react'
+import type { NewsData, NewsStatus, NewsStatusRecord, TabInfo } from './types'
 import { NewsCard } from './NewsCard'
 import { fetchNewsData } from './api'
 
@@ -9,6 +9,79 @@ function App() {
   const [error, setError] = useState<string | null>(null)
   const [selectedDate, setSelectedDate] = useState<string>('')
   const [availableDates, setAvailableDates] = useState<string[]>([])
+  const [currentTab, setCurrentTab] = useState<NewsStatus>('unprocessed')
+  const [newsStatusRecord, setNewsStatusRecord] = useState<NewsStatusRecord>({})
+
+  // 從 localStorage 載入新聞狀態
+  const loadNewsStatusFromStorage = useCallback((date: string): NewsStatusRecord => {
+    try {
+      const stored = localStorage.getItem(`newsStatus_${date}`)
+      return stored ? JSON.parse(stored) : {}
+    } catch (error) {
+      console.error('載入新聞狀態失敗:', error)
+      return {}
+    }
+  }, [])
+
+  // 保存新聞狀態到 localStorage
+  const saveNewsStatusToStorage = (date: string, statusRecord: NewsStatusRecord) => {
+    try {
+      localStorage.setItem(`newsStatus_${date}`, JSON.stringify(statusRecord))
+    } catch (error) {
+      console.error('保存新聞狀態失敗:', error)
+    }
+  }
+
+  // 生成新聞項目的唯一 ID
+  const generateNewsId = (link: string, headLine: string): string => {
+    return `${link.split('/').pop()}_${headLine.slice(0, 20).replace(/\s/g, '')}`
+  }
+
+  // 更新新聞狀態
+  const updateNewsStatus = (newsId: string, newStatus: NewsStatus) => {
+    const updatedRecord = {
+      ...newsStatusRecord,
+      [newsId]: newStatus
+    }
+    setNewsStatusRecord(updatedRecord)
+    saveNewsStatusToStorage(selectedDate, updatedRecord)
+  }
+
+  // 計算各 tab 的新聞數量
+  const getTabCounts = (): TabInfo[] => {
+    if (!newsData) return []
+    
+    const counts = {
+      unprocessed: 0,
+      selected: 0,
+      completed: 0,
+      rejected: 0
+    }
+    
+    newsData.newsInfo.forEach(news => {
+      const newsId = generateNewsId(news.link, news.headLine)
+      const status = newsStatusRecord[newsId] || 'unprocessed'
+      counts[status]++
+    })
+    
+    return [
+      { id: 'unprocessed', label: '未處理', count: counts.unprocessed },
+      { id: 'selected', label: '已選擇', count: counts.selected },
+      { id: 'completed', label: '處理完畢', count: counts.completed },
+      { id: 'rejected', label: '不採用', count: counts.rejected }
+    ]
+  }
+
+  // 根據當前 tab 篩選新聞
+  const getFilteredNews = () => {
+    if (!newsData) return []
+    
+    return newsData.newsInfo.filter(news => {
+      const newsId = generateNewsId(news.link, news.headLine)
+      const status = newsStatusRecord[newsId] || 'unprocessed'
+      return status === currentTab
+    })
+  }
 
   // 生成最近7天的日期列表
   const generateRecentDates = () => {
@@ -48,7 +121,7 @@ function App() {
     }
   }
 
-  const loadNewsData = async (date: string) => {
+  const loadNewsData = useCallback(async (date: string) => {
     try {
       setLoading(true)
       setError(null)
@@ -63,20 +136,24 @@ function App() {
       
       console.log('載入成功:', data)
       setNewsData(data)
+      
+      // 載入該日期的新聞狀態
+      const statusRecord = loadNewsStatusFromStorage(date)
+      setNewsStatusRecord(statusRecord)
     } catch (err) {
       console.error('載入新聞數據失敗:', err)
       setError(err instanceof Error ? err.message : '載入新聞數據時發生錯誤')
     } finally {
       setLoading(false)
     }
-  }
+  }, [loadNewsStatusFromStorage])
 
   useEffect(() => {
     const dates = generateRecentDates()
     setAvailableDates(dates)
     setSelectedDate(dates[0]) // 預設選擇今天
     loadNewsData(dates[0])
-  }, [])
+  }, [loadNewsData])
 
   const handleDateSelect = (date: string) => {
     setSelectedDate(date)
@@ -147,7 +224,7 @@ function App() {
         {!loading && !error && newsData && (
           <>
             <header className="bg-white border-b border-gray-200 px-4 lg:px-8 py-4">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl lg:text-2xl font-bold text-gray-900">
                   {formatDateDisplay(selectedDate)}
                 </h2>
@@ -155,16 +232,64 @@ function App() {
                   共 {newsData.newsInfo.length} 則新聞
                 </p>
               </div>
+              
+              {/* 分類 Tabs */}
+              <div className="flex gap-1 bg-gray-100 p-1 rounded-lg">
+                {getTabCounts().map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setCurrentTab(tab.id)}
+                    className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2 ${
+                      currentTab === tab.id
+                        ? 'bg-white text-blue-700 shadow-sm border border-blue-200'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
+                    }`}
+                  >
+                    <span>{tab.label}</span>
+                    <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
+                      currentTab === tab.id
+                        ? 'bg-blue-100 text-blue-700'
+                        : 'bg-gray-200 text-gray-600'
+                    }`}>
+                      {tab.count}
+                    </span>
+                  </button>
+                ))}
+              </div>
             </header>
 
             <div className="p-4 lg:p-8">
               <div className="space-y-6">
-                {newsData.newsInfo
+                {getFilteredNews()
                   .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
-                  .map((news, index) => (
-                    <NewsCard key={`${news.link}-${index}`} news={news} />
-                  ))}
+                  .map((news, index) => {
+                    const newsId = generateNewsId(news.link, news.headLine)
+                    const currentStatus = newsStatusRecord[newsId] || 'unprocessed'
+                    return (
+                      <NewsCard 
+                        key={`${news.link}-${index}`} 
+                        news={news} 
+                        newsId={newsId}
+                        currentStatus={currentStatus}
+                        onStatusChange={updateNewsStatus}
+                      />
+                    )
+                  })}
               </div>
+              
+              {getFilteredNews().length === 0 && (
+                <div className="text-center py-12">
+                  <h3 className="text-lg font-semibold text-gray-600 mb-2">
+                    此分類暫無新聞
+                  </h3>
+                  <p className="text-gray-500">
+                    {currentTab === 'unprocessed' && '所有新聞都已被處理'}
+                    {currentTab === 'selected' && '尚未選擇任何新聞'}
+                    {currentTab === 'completed' && '尚未完成任何新聞的處理'}
+                    {currentTab === 'rejected' && '尚未拒絕任何新聞'}
+                  </p>
+                </div>
+              )}
             </div>
           </>
         )}

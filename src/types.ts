@@ -16,3 +16,15 @@ export interface NewsData {
   newsInfo: NewsItem[];
   generatedAt: string;
 }
+
+export type NewsStatus = 'unprocessed' | 'selected' | 'completed' | 'rejected';
+
+export interface NewsStatusRecord {
+  [newsId: string]: NewsStatus;
+}
+
+export interface TabInfo {
+  id: NewsStatus;
+  label: string;
+  count: number;
+}
