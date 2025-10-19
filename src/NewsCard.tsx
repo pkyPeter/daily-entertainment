@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import type { NewsItem, NewsStatus } from "./types";
 import { Button } from "./Button";
+import { cn } from "./tailwind";
 
 interface NewsCardProps {
   news: NewsItem;
@@ -122,12 +123,13 @@ export const NewsCard: React.FC<NewsCardProps> = ({
         <div className="mb-4 pb-3 border-b border-gray-200">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-sm font-medium text-gray-700">狀態:</span>
-            <span className={`px-2 py-1 rounded-full text-xs font-medium cursor-pointer ${
-              currentStatus === 'unprocessed' ? 'bg-gray-100 text-gray-600' :
-              currentStatus === 'selected' ? 'bg-blue-100 text-blue-600' :
-              currentStatus === 'completed' ? 'bg-green-100 text-green-600' :
-              'bg-red-100 text-red-600'
-            }`}>
+            <span className={cn(
+              "px-2 py-1 rounded-full text-xs font-medium cursor-pointer",
+              currentStatus === 'unprocessed' && 'bg-gray-100 text-gray-600',
+              currentStatus === 'selected' && 'bg-blue-100 text-blue-600',
+              currentStatus === 'completed' && 'bg-green-100 text-green-600',
+              currentStatus === 'rejected' && 'bg-red-100 text-red-600'
+            )}>
               {currentStatus === 'unprocessed' ? '未處理' :
                currentStatus === 'selected' ? '已選擇' :
                currentStatus === 'completed' ? '處理完畢' :
@@ -453,9 +455,10 @@ export const NewsCard: React.FC<NewsCardProps> = ({
                   >
                     {showFullSuggest ? "隱藏" : "查看"}完整 AI 建議引導句回應
                     <svg
-                      className={`ml-1 w-3 h-3 transition-transform duration-200 ${
-                        showFullSuggest ? "rotate-180" : ""
-                      }`}
+                      className={cn(
+                        "ml-1 w-3 h-3 transition-transform duration-200",
+                        showFullSuggest && "rotate-180"
+                      )}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

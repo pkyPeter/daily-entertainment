@@ -1,4 +1,5 @@
 import React from 'react';
+import { cn } from './tailwind';
 
 interface ButtonProps {
   onClick: () => void;
@@ -29,7 +30,10 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`inline-flex items-center px-3 py-1.5 text-xs rounded-md transition-all duration-200 transform hover:scale-105 active:scale-95 ${getVariantClasses()}`}
+      className={cn(
+        "inline-flex items-center px-3 py-1.5 text-xs rounded-md transition-all duration-200 transform hover:scale-105 active:scale-95",
+        getVariantClasses()
+      )}
     >
       {icon && <span className="w-3 h-3 mr-1">{icon}</span>}
       {children}

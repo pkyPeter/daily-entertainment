@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import type { NewsData, NewsStatus, NewsStatusRecord, TabInfo } from './types'
 import { NewsCard } from './NewsCard'
 import { fetchNewsData } from './api'
+import { cn } from './tailwind'
 
 function App() {
   const [newsData, setNewsData] = useState<NewsData | null>(null)
@@ -173,18 +174,20 @@ function App() {
             {availableDates.map((date, index) => (
               <button
                 key={date}
-                className={`flex-shrink-0 lg:w-full text-left p-3 rounded-lg transition-all duration-200 flex items-center space-x-3 ${
+                className={cn(
+                  "flex-shrink-0 lg:w-full text-left p-3 rounded-lg transition-all duration-200 flex items-center space-x-3",
                   selectedDate === date 
-                    ? 'bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 hover:border-blue-300' 
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900 border border-transparent hover:border-gray-200'
-                }`}
+                    ? "bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 hover:border-blue-300"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-gray-900 border border-transparent hover:border-gray-200"
+                )}
                 onClick={() => handleDateSelect(date)}
               >
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0 ${
+                <span className={cn(
+                  "w-6 h-6 rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0",
                   selectedDate === date 
-                    ? 'bg-blue-100 text-blue-700' 
-                    : 'bg-gray-100 text-gray-600'
-                }`}>
+                    ? "bg-blue-100 text-blue-700"
+                    : "bg-gray-100 text-gray-600"
+                )}>
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <span className="font-medium whitespace-nowrap">{formatDateDisplay(date)}</span>
@@ -239,18 +242,20 @@ function App() {
                   <button
                     key={tab.id}
                     onClick={() => setCurrentTab(tab.id)}
-                    className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2 ${
+                    className={cn(
+                      "flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2",
                       currentTab === tab.id
-                        ? 'bg-white text-blue-700 shadow-sm border border-blue-200'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
-                    }`}
+                        ? "bg-white text-blue-700 shadow-sm border border-blue-200"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-white/50"
+                    )}
                   >
                     <span>{tab.label}</span>
-                    <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
+                    <span className={cn(
+                      "px-2 py-0.5 rounded-full text-xs font-bold",
                       currentTab === tab.id
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'bg-gray-200 text-gray-600'
-                    }`}>
+                        ? "bg-blue-100 text-blue-700"
+                        : "bg-gray-200 text-gray-600"
+                    )}>
                       {tab.count}
                     </span>
                   </button>
