@@ -214,7 +214,13 @@ async function scrapeYahooEntertainment() {
         請先閱讀以下新聞內容，然後用一句話幫這則新聞產生吸引人的引導句子，讓人想點進去看內容。
         這個句子的文字數量請控制在 10 個字內。
         請產出 4 句不同的引導式句子讓我選擇。
-        新聞內容如下：${content}`,
+        產出格式為：
+        1. xxx
+        2. xxx
+        3. xxx
+        4. xxx
+
+        前面要請你閱讀的新聞內容如下：${content}`,
     });
     console.log(`建議的引導句子 ${response.text}`);
 
