@@ -8,6 +8,7 @@ export interface NewsItem {
   imageProvider: string;
   authorName: string;
   newsProvider: string;
+  suggestLine?: string;
 }
 
 export interface NewsData {

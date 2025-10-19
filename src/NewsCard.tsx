@@ -137,6 +137,34 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
             </svg>
           </a>
 
+          {/* AI 建議字串區塊 */}
+          {news.suggestLine && (
+            <div className="mt-4 p-3 bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg">
+              <h4 className="text-sm font-semibold text-purple-800 mb-2 flex items-center">
+                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+                AI 建議引導句
+              </h4>
+              <div className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+                {news.suggestLine}
+              </div>
+              <div className="mt-2 flex gap-2">
+                <Button
+                  onClick={() => copyToClipboard(news.suggestLine || '', 'AI 建議句已複製到剪貼簿')}
+                  variant="blue"
+                  icon={
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  }
+                >
+                  複製建議句
+                </Button>
+              </div>
+            </div>
+          )}
+
           {/* 工具區 */}
           <div className="mt-4 pt-3 border-t border-gray-100">
             <div className="flex flex-wrap gap-2">
