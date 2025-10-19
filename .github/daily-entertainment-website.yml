@@ -1,0 +1,62 @@
+name: Generate Daily News Data
+
+on:
+  schedule:
+    # 每天早上 9:00 UTC (台灣時間 17:00) 自動執行
+    - cron: '35 9 * * *'
+  workflow_dispatch: # 允許手動觸發
+
+permissions:
+  contents: write
+
+jobs:
+  generate-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Generate news data
+        env:
+        run: node main.js
+
+      - name: Check for changes
+        id: verify-changed-files
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull --rebase origin main || git pull origin main
+          git add docs/json/*.json
+          git commit -m "🤖 Auto-generate daily news data - $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          git push
+
+      - name: Trigger deployment
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: deploy-website
