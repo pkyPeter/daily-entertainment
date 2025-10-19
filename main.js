@@ -91,19 +91,33 @@ async function scrapeYahooEntertainment() {
     )
       continue;
 
-    // 檢查是否為今日的新聞
-    const twTime = new Date().toLocaleString("en-US", {
+    // 檢查是否為今日下午2點之後的新聞
+    const now = new Date();
+    
+    // 獲取台灣時間的今日日期字串
+    const twTime = now.toLocaleString("en-US", {
       timeZone: "Asia/Taipei",
     });
     const todayDateStr = new Date(twTime).toISOString().split("T")[0];
-
+    
+    // 創建台灣時間今日下午2點的 UTC 時間戳
+    const today2PMTaiwan = new Date(`${todayDateStr}T14:00:00+08:00`);
+    
     const datePublished = jsonValue?.datePublished || "";
-    const publishDateStr = datePublished
-      ? new Date(datePublished).toISOString().split("T")[0]
-      : null;
-
-    console.log(`📅 發佈日期：${publishDateStr}`);
+    if (!datePublished) continue;
+    
+    const publishDate = new Date(datePublished);
+    const publishDateStr = publishDate.toISOString().split("T")[0];
+    
+    console.log(`📅 發佈日期：${publishDateStr} ${publishDate.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })}`);
+    console.log(`⏰ 台灣時間今日下午2點：${today2PMTaiwan.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })}`);
+    
+    // 檢查是否為今日且在下午2點之後 (以台灣時間為準)
     if (publishDateStr !== todayDateStr) continue;
+    if (publishDate < today2PMTaiwan) {
+      console.log(`⏰ 新聞發佈時間早於台灣時間今日下午2點，跳過`);
+      continue;
+    }
 
     // 抓標題
     const headLine = jsonValue?.headline || "";
