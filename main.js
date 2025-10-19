@@ -129,7 +129,7 @@ async function scrapeYahooEntertainment() {
       authorName.toLowerCase().includes("yahoo") ||
       newsProvider.toLowerCase().includes("yahoo")
     ) {
-      console.log(`🔄 跳過 Yahoo 來源的新聞：${headLine}`);
+      console.log(`🔄 跳過 Yahoo 來源的新聞：${source}`);
       continue;
     }
     // 檢查是否為今日下午2點之後的新聞
