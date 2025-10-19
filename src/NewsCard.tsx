@@ -193,17 +193,48 @@ export const NewsCard: React.FC<NewsCardProps> = ({
             )}
             
             {(currentStatus === 'completed' || currentStatus === 'rejected') && (
-              <Button
-                onClick={() => onStatusChange(newsId, 'unprocessed')}
-                variant="gray"
-                icon={
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
-                  </svg>
-                }
-              >
-                重新處理
-              </Button>
+              <div className="flex flex-wrap gap-2">
+                {currentStatus === 'completed' && (
+                  <Button
+                    onClick={() => onStatusChange(newsId, 'unprocessed')}
+                    variant="gray"
+                    icon={
+                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                      </svg>
+                    }
+                  >
+                    重新處理
+                  </Button>
+                )}
+                
+                {currentStatus === 'rejected' && (
+                  <>
+                    <Button
+                      onClick={() => onStatusChange(newsId, 'selected')}
+                      variant="blue"
+                      icon={
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      }
+                    >
+                      改為選擇
+                    </Button>
+                    <Button
+                      onClick={() => onStatusChange(newsId, 'unprocessed')}
+                      variant="gray"
+                      icon={
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                        </svg>
+                      }
+                    >
+                      回到未處理
+                    </Button>
+                  </>
+                )}
+              </div>
             )}
           </div>
         </div>
