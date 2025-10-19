@@ -44,7 +44,18 @@ async function scrapeYahooEntertainment() {
     timeout: 60000, // 可加長 timeout
   });
 
-  console.log("📄 抓取新聞連結...");
+  console.log("� 滾動頁面載入更多新聞...");
+  // 滾動到底部兩次以載入更多新聞
+  for (let i = 1; i <= 2; i++) {
+    console.log(`🔄 第 ${i} 次滾動到底部`);
+    await page.evaluate(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+    // 等待新內容載入
+    await page.waitForTimeout(2000);
+  }
+
+  console.log("�📄 抓取新聞連結...");
   // 抓出上方有的連結
   const topLinks = await page.$$eval("#Col1-1-Hero-Proxy a", (as) =>
     as
@@ -62,19 +73,38 @@ async function scrapeYahooEntertainment() {
       )
   );
 
-  const allLinks = topLinks.concat(moreLinks);
+  // 抓出所有新聞連結：日韓新聞
+  const jpKrLinksWithoutDomain = await page.$$eval("#Main a", (as) =>
+    as.map((a) => a.href).filter((href) => href.includes("html"))
+  );
+  const jpKrLins = jpKrLinksWithoutDomain.map((href) =>
+    href.includes("tw.news.yahoo.com")
+      ? href
+      : `https://tw.news.yahoo.com${href}`
+  );
+
+  console.log(
+    `分別找到 ${topLinks.length} 則上方新聞連結 和 ${moreLinks.length} 則更多新聞連結 和 ${jpKrLins.length} 則日韓新聞連結`
+  );
+  const allLinks = topLinks.concat(moreLinks).concat(jpKrLins);
   console.log(`合併後找到 ${allLinks.length} 則新聞連結`);
-  
+
   // 去除重複的連結
   const links = [...new Set(allLinks)];
   console.log(`去重後剩餘 ${links.length} 則新聞連結`);
 
   const results = [];
   for (const link of links) {
-    if (results.length >= 10) break;
+    await new Promise((r) => setTimeout(r, 1000)); // 每則新聞間隔2秒
+    if (results.length >= 20) break;
 
     console.log(`🔗 處理新聞：${link}`);
-    await page.goto(link, { waitUntil: "domcontentloaded" });
+    try {
+      await page.goto(link, { waitUntil: "domcontentloaded" });
+    } catch (error) {
+      console.error(`❌ 無法載入頁面 ${link} ：`, error.message);
+      continue;
+    }
 
     // 檢查來源是否為 Yahoo 自製
     const source = await page
@@ -97,25 +127,33 @@ async function scrapeYahooEntertainment() {
 
     // 檢查是否為今日下午2點之後的新聞
     const now = new Date();
-    
+
     // 獲取台灣時間的今日日期字串
     const twTime = now.toLocaleString("en-US", {
       timeZone: "Asia/Taipei",
     });
     const todayDateStr = new Date(twTime).toISOString().split("T")[0];
-    
+
     // 創建台灣時間今日下午2點的 UTC 時間戳
     const today2PMTaiwan = new Date(`${todayDateStr}T14:00:00+08:00`);
-    
+
     const datePublished = jsonValue?.datePublished || "";
     if (!datePublished) continue;
-    
+
     const publishDate = new Date(datePublished);
     const publishDateStr = publishDate.toISOString().split("T")[0];
-    
-    console.log(`📅 發佈日期：${publishDateStr} ${publishDate.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })}`);
-    console.log(`⏰ 台灣時間今日下午2點：${today2PMTaiwan.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })}`);
-    
+
+    console.log(
+      `📅 發佈日期：${publishDateStr} ${publishDate.toLocaleString("zh-TW", {
+        timeZone: "Asia/Taipei",
+      })}`
+    );
+    console.log(
+      `⏰ 台灣時間今日下午2點：${today2PMTaiwan.toLocaleString("zh-TW", {
+        timeZone: "Asia/Taipei",
+      })}`
+    );
+
     // 檢查是否為今日且在下午2點之後 (以台灣時間為準)
     if (publishDateStr !== todayDateStr) continue;
     if (publishDate < today2PMTaiwan) {
@@ -131,7 +169,7 @@ async function scrapeYahooEntertainment() {
 
     // 檢查標題前7個字是否與已收集的新聞重複
     const headLinePrefix = headLine.substring(0, 7);
-    const isDuplicate = results.some(existingNews => {
+    const isDuplicate = results.some((existingNews) => {
       const existingPrefix = existingNews.headLine.substring(0, 7);
       return existingPrefix === headLinePrefix;
     });
