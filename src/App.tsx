@@ -96,10 +96,10 @@ function App() {
             {availableDates.map((date, index) => (
               <button
                 key={date}
-                className={`flex-shrink-0 lg:w-full text-left p-3 rounded-lg transition-colors duration-200 flex items-center space-x-3 ${
+                className={`flex-shrink-0 lg:w-full text-left p-3 rounded-lg transition-all duration-200 flex items-center space-x-3 ${
                   selectedDate === date 
-                    ? 'bg-blue-50 text-blue-700 border border-blue-200' 
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? 'bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 hover:border-blue-300' 
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900 border border-transparent hover:border-gray-200'
                 }`}
                 onClick={() => handleDateSelect(date)}
               >
@@ -136,7 +136,7 @@ function App() {
               <button 
                 onClick={() => loadNewsData(selectedDate)} 
                 disabled={loading}
-                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 disabled:opacity-50"
+                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-105 active:scale-95"
               >
                 {loading ? '載入中...' : '重新載入'}
               </button>
