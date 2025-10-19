@@ -8,6 +8,27 @@ interface NewsCardProps {
 
 export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [showFullSuggest, setShowFullSuggest] = useState(false);
+
+  // 解析 AI 建議句子
+  const parseSuggestLines = (suggestLine: string) => {
+    // 使用正則表達式匹配 **文字** 格式的句子
+    const matches = suggestLine.match(/\*\*([^*]+)\*\*/g);
+    if (matches) {
+      return matches.map(match => match.replace(/\*\*/g, '').trim());
+    }
+    
+    // 如果沒有匹配到 ** 格式，嘗試按行分割
+    const lines = suggestLine.split('\n').filter(line => line.trim());
+    const suggestions = lines.filter(line => 
+      line.includes('.') && 
+      (line.includes('**') || line.match(/^\d+\./))
+    ).map(line => 
+      line.replace(/^\d+\.\s*/, '').replace(/\*\*/g, '').trim()
+    );
+    
+    return suggestions.length > 0 ? suggestions : [suggestLine.trim()];
+  };
 
   const copyToClipboard = async (text: string, successMessage: string) => {
     try {
@@ -146,21 +167,44 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
                 </svg>
                 AI 建議引導句
               </h4>
-              <div className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
-                {news.suggestLine}
+              
+              {/* 解析後的建議句子列表 */}
+              <div className="space-y-2 mb-3">
+                {parseSuggestLines(news.suggestLine).map((suggestion, index) => (
+                  <div key={index} className="flex items-center justify-between bg-white bg-opacity-60 rounded-md p-2 border border-purple-100">
+                    <span className="text-sm font-medium text-gray-800 flex-1">{suggestion}</span>
+                    <Button
+                      onClick={() => copyToClipboard(suggestion, `建議句 ${index + 1} 已複製到剪貼簿`)}
+                      variant="blue"
+                      icon={
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                      }
+                    >
+                      複製
+                    </Button>
+                  </div>
+                ))}
               </div>
-              <div className="mt-2 flex gap-2">
-                <Button
-                  onClick={() => copyToClipboard(news.suggestLine || '', 'AI 建議句已複製到剪貼簿')}
-                  variant="blue"
-                  icon={
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                  }
+
+              {/* 可收合的完整內容區塊 */}
+              <div className="border-t border-purple-200 pt-2">
+                <button
+                  onClick={() => setShowFullSuggest(!showFullSuggest)}
+                  className="text-xs text-purple-700 hover:text-purple-900 font-medium flex items-center transition-colors duration-200"
                 >
-                  複製建議句
-                </Button>
+                  {showFullSuggest ? '隱藏' : '查看'}完整 AI 建議引導句回應
+                  <svg className={`ml-1 w-3 h-3 transition-transform duration-200 ${showFullSuggest ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {showFullSuggest && (
+                  <div className="mt-2 p-2 bg-white bg-opacity-40 rounded border border-purple-100 text-xs text-gray-600 whitespace-pre-line">
+                    {news.suggestLine}
+                  </div>
+                )}
               </div>
             </div>
           )}
