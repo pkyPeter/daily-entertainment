@@ -124,12 +124,14 @@ async function scrapeYahooEntertainment() {
     const newsProvider = jsonValue?.provider?.name || "";
 
     console.log(`📝 新聞來源作者：${authorName}`);
+    console.log(`🏢 新聞提供者：${newsProvider}`);
     if (
       authorName.toLowerCase().includes("yahoo") ||
       newsProvider.toLowerCase().includes("yahoo")
-    )
+    ) {
+      console.log(`🔄 跳過 Yahoo 來源的新聞：${headLine}`);
       continue;
-
+    }
     // 檢查是否為今日下午2點之後的新聞
     const now = new Date();
 
