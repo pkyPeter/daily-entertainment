@@ -33,6 +33,7 @@ jobs:
 
       - name: Generate news data
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node main.js
 
       - name: Check for changes
