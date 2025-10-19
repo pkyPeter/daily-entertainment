@@ -126,12 +126,14 @@ export const NewsCard: React.FC<NewsCardProps> = ({
             <span className={cn(
               "px-2 py-1 rounded-full text-xs font-medium cursor-pointer",
               currentStatus === 'unprocessed' && 'bg-gray-100 text-gray-600',
-              currentStatus === 'selected' && 'bg-blue-100 text-blue-600',
+              currentStatus === 'selected-pic' && 'bg-blue-100 text-blue-600',
+              currentStatus === 'selected-sta' && 'bg-indigo-100 text-indigo-600',
               currentStatus === 'completed' && 'bg-green-100 text-green-600',
               currentStatus === 'rejected' && 'bg-red-100 text-red-600'
             )}>
               {currentStatus === 'unprocessed' ? '未處理' :
-               currentStatus === 'selected' ? '已選擇' :
+               currentStatus === 'selected-pic' ? '已選擇 (PIC)' :
+               currentStatus === 'selected-sta' ? '已選擇 (STA)' :
                currentStatus === 'completed' ? '處理完畢' :
                '不採用'}
             </span>
@@ -141,15 +143,26 @@ export const NewsCard: React.FC<NewsCardProps> = ({
             {currentStatus === 'unprocessed' && (
               <>
                 <Button
-                  onClick={() => onStatusChange(newsId, 'selected')}
+                  onClick={() => onStatusChange(newsId, 'selected-pic')}
                   variant="blue"
                   icon={
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                   }
                 >
-                  選擇
+                  選擇 (PIC)
+                </Button>
+                <Button
+                  onClick={() => onStatusChange(newsId, 'selected-sta')}
+                  variant="blue"
+                  icon={
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  }
+                >
+                  選擇 (STA)
                 </Button>
                 <Button
                   onClick={() => onStatusChange(newsId, 'rejected')}
@@ -165,7 +178,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
               </>
             )}
             
-            {currentStatus === 'selected' && (
+            {(currentStatus === 'selected-pic' || currentStatus === 'selected-sta') && (
               <>
                 <Button
                   onClick={() => onStatusChange(newsId, 'completed')}
@@ -178,6 +191,32 @@ export const NewsCard: React.FC<NewsCardProps> = ({
                 >
                   處理完畢
                 </Button>
+                {currentStatus === 'selected-pic' && (
+                  <Button
+                    onClick={() => onStatusChange(newsId, 'selected-sta')}
+                    variant="blue"
+                    icon={
+                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    }
+                  >
+                    改為 (STA)
+                  </Button>
+                )}
+                {currentStatus === 'selected-sta' && (
+                  <Button
+                    onClick={() => onStatusChange(newsId, 'selected-pic')}
+                    variant="blue"
+                    icon={
+                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    }
+                  >
+                    改為 (PIC)
+                  </Button>
+                )}
                 <Button
                   onClick={() => onStatusChange(newsId, 'unprocessed')}
                   variant="gray"
@@ -211,15 +250,26 @@ export const NewsCard: React.FC<NewsCardProps> = ({
                 {currentStatus === 'rejected' && (
                   <>
                     <Button
-                      onClick={() => onStatusChange(newsId, 'selected')}
+                      onClick={() => onStatusChange(newsId, 'selected-pic')}
                       variant="blue"
                       icon={
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                       }
                     >
-                      改為選擇
+                      改為選擇 (PIC)
+                    </Button>
+                    <Button
+                      onClick={() => onStatusChange(newsId, 'selected-sta')}
+                      variant="blue"
+                      icon={
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      }
+                    >
+                      改為選擇 (STA)
                     </Button>
                     <Button
                       onClick={() => onStatusChange(newsId, 'unprocessed')}

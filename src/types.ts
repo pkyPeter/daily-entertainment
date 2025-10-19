@@ -17,7 +17,7 @@ export interface NewsData {
   generatedAt: string;
 }
 
-export type NewsStatus = 'unprocessed' | 'selected' | 'completed' | 'rejected';
+export type NewsStatus = 'unprocessed' | 'selected-pic' | 'selected-sta' | 'completed' | 'rejected';
 
 export interface NewsStatusRecord {
   [newsId: string]: NewsStatus;

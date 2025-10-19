@@ -96,7 +96,8 @@ function App() {
     
     const counts = {
       unprocessed: 0,
-      selected: 0,
+      'selected-pic': 0,
+      'selected-sta': 0,
       completed: 0,
       rejected: 0
     }
@@ -109,7 +110,8 @@ function App() {
     
     return [
       { id: 'unprocessed', label: '未處理', count: counts.unprocessed },
-      { id: 'selected', label: '已選擇', count: counts.selected },
+      { id: 'selected-pic', label: '已選擇 (PIC)', count: counts['selected-pic'] },
+      { id: 'selected-sta', label: '已選擇 (STA)', count: counts['selected-sta'] },
       { id: 'completed', label: '處理完畢', count: counts.completed },
       { id: 'rejected', label: '不採用', count: counts.rejected }
     ]
@@ -393,7 +395,8 @@ function App() {
                   </h3>
                   <p className="text-gray-500">
                     {currentTab === 'unprocessed' && '所有新聞都已被處理'}
-                    {currentTab === 'selected' && '尚未選擇任何新聞'}
+                    {currentTab === 'selected-pic' && '尚未選擇任何 PIC 新聞'}
+                    {currentTab === 'selected-sta' && '尚未選擇任何 STA 新聞'}
                     {currentTab === 'completed' && '尚未完成任何新聞的處理'}
                     {currentTab === 'rejected' && '尚未拒絕任何新聞'}
                   </p>
