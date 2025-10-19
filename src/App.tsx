@@ -12,6 +12,7 @@ function App() {
   const [availableDates, setAvailableDates] = useState<string[]>([])
   const [currentTab, setCurrentTab] = useState<NewsStatus>('unprocessed')
   const [newsStatusRecord, setNewsStatusRecord] = useState<NewsStatusRecord>({})
+  const [showResetOptions, setShowResetOptions] = useState(false)
 
   // 從 localStorage 載入新聞狀態
   const loadNewsStatusFromStorage = useCallback((date: string): NewsStatusRecord => {
@@ -46,6 +47,47 @@ function App() {
     }
     setNewsStatusRecord(updatedRecord)
     saveNewsStatusToStorage(selectedDate, updatedRecord)
+  }
+
+  // 清除指定日期的新聞狀態記錄
+  const resetNewsStatusByDate = (date: string) => {
+    if (window.confirm(`確定要清除 ${formatDateDisplay(date)} 的新聞狀態記錄嗎？此操作無法復原。`)) {
+      try {
+        // 清除指定日期的 localStorage 項目
+        localStorage.removeItem(`newsStatus_${date}`)
+        
+        // 如果清除的是當前選中的日期，重置當前狀態
+        if (date === selectedDate) {
+          setNewsStatusRecord({})
+          setCurrentTab('unprocessed')
+        }
+        
+        alert(`${formatDateDisplay(date)} 的新聞狀態記錄已清除！`)
+      } catch (error) {
+        console.error('清除新聞狀態失敗:', error)
+        alert('清除失敗，請再試一次。')
+      }
+    }
+  }
+
+  // 清除所有新聞狀態記錄
+  const resetAllNewsStatus = () => {
+    if (window.confirm('確定要清除所有新聞狀態記錄嗎？此操作無法復原。')) {
+      try {
+        // 清除所有以 newsStatus_ 開頭的 localStorage 項目
+        const keysToRemove = Object.keys(localStorage).filter(key => key.startsWith('newsStatus_'))
+        keysToRemove.forEach(key => localStorage.removeItem(key))
+        
+        // 重置當前狀態
+        setNewsStatusRecord({})
+        setCurrentTab('unprocessed')
+        
+        alert('所有新聞狀態記錄已清除！')
+      } catch (error) {
+        console.error('清除新聞狀態失敗:', error)
+        alert('清除失敗，請再試一次。')
+      }
+    }
   }
 
   // 計算各 tab 的新聞數量
@@ -195,6 +237,68 @@ function App() {
             ))}
           </div>
         </nav>
+        
+        {/* 重置功能區 */}
+        <div className="p-4 border-t border-gray-200 mt-auto">
+          <div className="space-y-2">
+            {/* 清除當前日期按鈕 */}
+            <button
+              onClick={() => resetNewsStatusByDate(selectedDate)}
+              className="w-full px-3 py-2 text-sm text-orange-600 hover:text-orange-700 hover:bg-orange-50 border border-orange-200 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z" />
+              </svg>
+              清除當前日期
+            </button>
+            
+            {/* 展開/收合更多選項 */}
+            <button
+              onClick={() => setShowResetOptions(!showResetOptions)}
+              className="w-full px-3 py-1.5 text-xs text-gray-600 hover:text-gray-700 hover:bg-gray-50 border border-gray-200 rounded-lg transition-all duration-200 flex items-center justify-center gap-1"
+            >
+              {showResetOptions ? '收合選項' : '更多清除選項'}
+              <svg className={cn(
+                "w-3 h-3 transition-transform duration-200",
+                showResetOptions && "rotate-180"
+              )} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* 展開的選項 */}
+            {showResetOptions && (
+              <div className="space-y-2 pt-2 border-t border-gray-100">
+                {/* 清除指定日期 */}
+                <div className="space-y-1">
+                  <label className="text-xs font-medium text-gray-700">清除指定日期：</label>
+                  <div className="grid grid-cols-1 gap-1 max-h-32 overflow-y-auto">
+                    {availableDates.map(date => (
+                      <button
+                        key={date}
+                        onClick={() => resetNewsStatusByDate(date)}
+                        className="text-left px-2 py-1.5 text-xs text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded border border-gray-100 transition-all duration-200"
+                      >
+                        {formatDateDisplay(date)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* 清除所有記錄 */}
+                <button
+                  onClick={resetAllNewsStatus}
+                  className="w-full px-3 py-2 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 border border-red-200 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                  清除所有記錄
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
       </aside>
 
       {/* 主要內容區 */}
