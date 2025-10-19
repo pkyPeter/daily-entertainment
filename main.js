@@ -1,6 +1,12 @@
 import { chromium } from "playwright";
 import fs from "fs";
 import path from "path";
+import dotenv from "dotenv";
+import { GoogleGenAI } from "@google/genai";
+
+dotenv.config();
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+console.log("🚀 初始化 Google Gemini AI 客戶端...");
 
 async function saveToJsonFile(newsInfo) {
   try {
@@ -201,6 +207,16 @@ async function scrapeYahooEntertainment() {
     console.log(`🖼️ 圖片網址：${imageUrl}`);
     console.log(`🏷️ 圖片提供者：${imageProvider}`);
 
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: `
+        請先閱讀以下新聞內容，然後用一句話幫這則新聞產生吸引人的引導句子，讓人想點進去看內容。
+        這個句子的文字數量請控制在 10 個字內。
+        請產出 4 句不同的引導式句子讓我選擇。
+        新聞內容如下：${content}`,
+    });
+    console.log(`建議的引導句子 ${response.text}`);
+
     results.push({
       link,
       headLine,
@@ -211,6 +227,7 @@ async function scrapeYahooEntertainment() {
       imageProvider,
       authorName,
       newsProvider,
+      suggestLine: response.text,
     });
 
     if (results.length >= 10) break;
