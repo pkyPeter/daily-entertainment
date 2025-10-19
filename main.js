@@ -62,8 +62,12 @@ async function scrapeYahooEntertainment() {
       )
   );
 
-  const links = topLinks.concat(moreLinks);
-  console.log(`找到 ${links.length} 則新聞連結`);
+  const allLinks = topLinks.concat(moreLinks);
+  console.log(`合併後找到 ${allLinks.length} 則新聞連結`);
+  
+  // 去除重複的連結
+  const links = [...new Set(allLinks)];
+  console.log(`去重後剩餘 ${links.length} 則新聞連結`);
 
   const results = [];
   for (const link of links) {
@@ -124,6 +128,18 @@ async function scrapeYahooEntertainment() {
     console.log(`📰 標題：${headLine}`);
 
     if (!headLine) continue;
+
+    // 檢查標題前7個字是否與已收集的新聞重複
+    const headLinePrefix = headLine.substring(0, 7);
+    const isDuplicate = results.some(existingNews => {
+      const existingPrefix = existingNews.headLine.substring(0, 7);
+      return existingPrefix === headLinePrefix;
+    });
+
+    if (isDuplicate) {
+      console.log(`🔄 標題前7個字重複，跳過：${headLinePrefix}`);
+      continue;
+    }
 
     // 過濾敏感關鍵字
     const content = await page
