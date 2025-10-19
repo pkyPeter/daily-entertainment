@@ -41,6 +41,24 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
     }
   };
 
+  // 清理圖片來源文字，提取括號內的內容
+  const cleanImageProvider = (imageProvider: string) => {
+    // 使用正則表達式匹配 （圖／...） 或 (圖／...) 格式
+    const match = imageProvider.match(/[（(]([^）)]*圖[／/][^）)]*)[）)]/);
+    if (match) {
+      return match[1]; // 返回括號內的內容（不包含括號）
+    }
+    
+    // 如果沒有匹配到括號格式，尋找包含「圖／」的部分
+    const imgMatch = imageProvider.match(/圖[／/][^，。]*[^，。]/);
+    if (imgMatch) {
+      return imgMatch[0];
+    }
+    
+    // 如果都沒匹配到，返回原始文字
+    return imageProvider;
+  };
+
   const copyUrlWithNcid = async () => {
     const urlWithNcid = `${news.link}?ncid=facebook_twfbtracki_qycu9rbgk0q`;
     await copyToClipboard(urlWithNcid, '網址（含 NCID）已複製到剪貼簿');
@@ -239,7 +257,10 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
                   </Button>
 
                   <Button
-                    onClick={() => copyToClipboard(news.imageProvider || '圖片來源', '圖片來源已複製到剪貼簿')}
+                    onClick={() => {
+                      const cleanedProvider = cleanImageProvider(news.imageProvider || '圖片來源');
+                      copyToClipboard(cleanedProvider, `圖片來源已複製到剪貼簿：${cleanedProvider}`);
+                    }}
                     variant="blue"
                     icon={
                       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
