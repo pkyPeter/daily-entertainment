@@ -72,7 +72,7 @@ async function scrapeYahooEntertainment() {
   );
 
   const dramaLinks = dramaWithoutDomain.map((href) =>
-    href.includes("tw.news.yahoo.com")
+    href.includes("https://")
       ? href
       : `https://tw.news.yahoo.com${href}`
   );
@@ -109,7 +109,7 @@ async function scrapeYahooEntertainment() {
   );
 
   const archiveLinks = archiveLinksWithoutDomain.map((href) =>
-    href.includes("tw.news.yahoo.com")
+    href.includes("https://")
       ? href
       : `https://tw.news.yahoo.com${href}`
   );
@@ -140,7 +140,7 @@ async function scrapeYahooEntertainment() {
     as
       .map((a) => a.href)
       .filter(
-        (href) => href.includes("tw.news.yahoo.com") && href.includes("html")
+        (href) => href.includes("https://") && href.includes("html")
       )
   );
   // 抓出所有新聞連結：下方的更多娛樂新聞
@@ -148,19 +148,35 @@ async function scrapeYahooEntertainment() {
     as
       .map((a) => a.href)
       .filter(
-        (href) => href.includes("tw.news.yahoo.com") && href.includes("html")
+        (href) => href.includes("https://") && href.includes("html")
       )
   );
 
+  console.log("🔍 開始爬取 最新日韓新聞...");
+  await page.goto("https://tw.news.yahoo.com/jp-kr", {
+    waitUntil: "domcontentloaded",
+    timeout: 60000, // 可加長 timeout
+  });
+  // 滾動到底部兩次以載入更多新聞
+  for (let i = 1; i <= 2; i++) {
+    console.log(`🔄 第 ${i} 次滾動到底部`);
+    await page.evaluate(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+    // 等待新內容載入
+    await page.waitForTimeout(2000);
+  }
+
   // 抓出所有新聞連結：日韓新聞
-  const jpKrLinksWithoutDomain = await page.$$eval("#Main a", (as) =>
+  const jpKrLinksWithoutDomain = await page.$$eval("#YDC-Stream a", (as) =>
     as.map((a) => a.href).filter((href) => href.includes("html"))
   );
   const jpKrLins = jpKrLinksWithoutDomain.map((href) =>
-    href.includes("tw.news.yahoo.com")
+    href.includes("https://")
       ? href
       : `https://tw.news.yahoo.com${href}`
   );
+
 
     // 星座運勢
   console.log("🔍 開始爬取 星座運勢 新聞...");
@@ -190,7 +206,7 @@ async function scrapeYahooEntertainment() {
   );
 
   const horoscopeLinks = horoscopeWithoutDomain.map((href) =>
-    href.includes("tw.news.yahoo.com")
+    href.includes("https://")
       ? href
       : `https://tw.news.yahoo.com${href}`
   );
@@ -216,9 +232,13 @@ async function scrapeYahooEntertainment() {
   // 去除重複的連結
   const links = [...new Set(allLinks)];
   console.log(`去重後剩餘 ${links.length} 則新聞連結`);
+  console.log("====");
+  console.log(links);
+  console.log("====")
 
   const results = [];
   for (const link of links) {
+    console.log("====================");
     await new Promise((r) => setTimeout(r, 1000)); // 每則新聞間隔2秒
 
     console.log(`🔗 處理新聞：${link}`);
@@ -263,7 +283,10 @@ async function scrapeYahooEntertainment() {
     const today2PMTaiwan = new Date(`${todayDateStr}T14:00:00+08:00`);
 
     const datePublished = jsonValue?.datePublished || "";
-    if (!datePublished) continue;
+    if (!datePublished) {
+      console.log(`❌ 無發佈日期，跳過`);
+      continue;
+    };
 
     const publishDate = new Date(datePublished);
     const publishDateStr = publishDate.toISOString().split("T")[0];
@@ -280,7 +303,10 @@ async function scrapeYahooEntertainment() {
     );
 
     // 檢查是否為今日且在下午2點之後 (以台灣時間為準)
-    if (publishDateStr !== todayDateStr) continue;
+    if (publishDateStr !== todayDateStr) {
+      console.log(`🔄 發佈日期非今日，跳過`)
+      continue;
+    };
     if (publishDate < today2PMTaiwan) {
       console.log(`⏰ 新聞發佈時間早於台灣時間今日下午2點，跳過`);
       continue;
@@ -290,7 +316,10 @@ async function scrapeYahooEntertainment() {
     const headLine = jsonValue?.headline || "";
     console.log(`📰 標題：${headLine}`);
 
-    if (!headLine) continue;
+    if (!headLine) {
+      console.log(`❌ 無標題，跳過`);
+      continue;
+    };
 
     // 檢查標題前7個字是否與已收集的新聞重複
     const headLinePrefix = headLine.substring(0, 7);
