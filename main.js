@@ -45,7 +45,7 @@ async function scrapeYahooEntertainment() {
   const page = await browser.newPage();
 
   // 追劇情報
-  console.log("🔍 開始爬取 Yahoo 娛樂即時 新聞...");
+  console.log("🔍 開始爬取 追劇情報 新聞...");
   await page.goto("https://tw.news.yahoo.com/ottdrama/", {
     waitUntil: "domcontentloaded",
     timeout: 60000, // 可加長 timeout
@@ -162,10 +162,55 @@ async function scrapeYahooEntertainment() {
       : `https://tw.news.yahoo.com${href}`
   );
 
-  console.log(
-    `分別找到 ${topLinks.length} 則上方新聞連結 和 ${moreLinks.length} 則更多新聞連結 和 ${jpKrLins.length} 則日韓新聞連結`
+    // 星座運勢
+  console.log("🔍 開始爬取 星座運勢 新聞...");
+  await page.goto("https://tw.news.yahoo.com/horoscope/", {
+    waitUntil: "domcontentloaded",
+    timeout: 60000, // 可加長 timeout
+  });
+
+  console.log("� 滾動頁面載入更多新聞...");
+  // 滾動到底部兩次以載入更多新聞
+  for (let i = 1; i <= 2; i++) {
+    console.log(`🔄 第 ${i} 次滾動到底部`);
+    await page.evaluate(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+    // 等待新內容載入
+    await page.waitForTimeout(2000);
+  }
+  console.log("�📄 抓取新聞連結...");
+  // 抓出所有新聞連結
+  const horoscopeWithoutDomain = await page.$$eval("#YDC-Stream a", (as) =>
+    as
+      .map((a) => a.href)
+      .filter(
+        (href) => href.includes("html")
+      )
   );
-  const allLinks = dramaLinks.concat(topLinks).concat(moreLinks).concat(jpKrLins).concat(archiveLinks);
+
+  const horoscopeLinks = horoscopeWithoutDomain.map((href) =>
+    href.includes("tw.news.yahoo.com")
+      ? href
+      : `https://tw.news.yahoo.com${href}`
+  );
+
+  console.log(`找到 ${horoscopeLinks.length} 則新聞連結`);
+
+  console.log(
+    `分別找到
+    ${dramaLinks.length} 則追劇情報 
+     和 
+     ${topLinks.length} 則上方新聞連結 
+     和
+     ${moreLinks.length} 則更多新聞連結
+     和
+     ${jpKrLins.length} 則日韓新聞連結
+     和
+      ${horoscopeLinks.length} 則星座運勢新聞
+     `
+  );
+  const allLinks = dramaLinks.concat(topLinks).concat(moreLinks).concat(jpKrLins).concat(archiveLinks).concat(horoscopeLinks);
   console.log(`合併後找到 ${allLinks.length} 則新聞連結`);
 
   // 去除重複的連結
