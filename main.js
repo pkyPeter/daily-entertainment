@@ -318,7 +318,7 @@ async function scrapeYahooEntertainment() {
   // 儲存結果到 JSON 檔案
   await saveToJsonFile(results);
 
-  console.log("✅ 已產出 30 則新聞：output.json");
+  console.log(`✅ 已產出 ${results.length} 則新聞：output.json`);
 }
 
 scrapeYahooEntertainment();

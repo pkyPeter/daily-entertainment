@@ -85,7 +85,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `${fileName.substring(0, 50)}.jpg`; // 限制檔名長度
+      link.download = `${fileName.substring(0, 50)}`; // 限制檔名長度
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
