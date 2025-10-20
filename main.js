@@ -63,7 +63,7 @@ async function scrapeYahooEntertainment() {
   }
   console.log("�📄 抓取新聞連結...");
   // 抓出所有新聞連結
-  const dramaWithoutDomain = await page.$$eval("#stream-container-scroll-template a", (as) =>
+  const dramaWithoutDomain = await page.$$eval("#YDC-Stream a", (as) =>
     as
       .map((a) => a.href)
       .filter(
