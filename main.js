@@ -71,7 +71,7 @@ async function scrapeYahooEntertainment() {
       )
   );
 
-  const dramaLinks = dramaLinksWithoutDomain.map((href) =>
+  const dramaLinks = dramaWithoutDomain.map((href) =>
     href.includes("tw.news.yahoo.com")
       ? href
       : `https://tw.news.yahoo.com${href}`
