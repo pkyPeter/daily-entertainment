@@ -29,6 +29,17 @@ async function saveToJsonFile(newsInfo) {
       generatedAt: new Date().toISOString(),
     };
 
+    const result = fs.readFileSync(filePath, "utf8");
+
+    if (result) {
+      const existingData = JSON.parse(result);
+      // 合併新舊資料
+      const filteredNewNews = data.newsInfo.filter((newNews => {
+        return !existingData.newsInfo.some(existingNews => existingNews.headLine === newNews.headLine);
+      }));
+      data.newsInfo = [...existingData.newsInfo, ...filteredNewNews];
+    }
+
     // 寫入檔案
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
     console.log(`✅ 資料已保存到: ${fileName}`);
