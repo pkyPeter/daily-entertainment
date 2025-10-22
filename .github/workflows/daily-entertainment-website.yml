@@ -2,7 +2,13 @@ name: Generate Daily News Data
 
 on:
   schedule:
-    # 每天早上 10:50 UTC (台灣時間 17:50) 自動執行
+    # 台灣時間 17:50 (UTC 09:50)
+    - cron: '50 9 * * *'
+    # 台灣時間 18:10 (UTC 10:10) 
+    - cron: '10 10 * * *'
+    # 台灣時間 18:30 (UTC 10:30)
+    - cron: '30 10 * * *'
+    # 台灣時間 18:50 (UTC 10:50)
     - cron: '50 10 * * *'
   workflow_dispatch: # 允許手動觸發
 
@@ -58,9 +64,3 @@ jobs:
           git commit -m "🤖 Auto-generate daily news data - $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
           git push
 
-      - name: Trigger deployment
-        if: steps.verify-changed-files.outputs.changed == 'true'
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          event-type: deploy-website
