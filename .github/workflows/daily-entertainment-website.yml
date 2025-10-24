@@ -64,3 +64,10 @@ jobs:
           git commit -m "🤖 Auto-generate daily news data - $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
           git push
 
+
+      - name: Trigger deployment
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: deploy-website
