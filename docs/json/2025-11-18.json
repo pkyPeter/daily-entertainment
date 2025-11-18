@@ -528,7 +528,31 @@
       "authorName": "鏡新聞",
       "newsProvider": "鏡新聞",
       "suggestLine": "很抱歉，我無法為您產生新聞引導句。因為您只提供了說明，但**沒有附上任何新聞內容**。\n\n請您將新聞內容貼上，我才能依照內容來產生吸引人的引導句子。"
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E5%AE%89%E5%BF%83%E4%BA%9E%E5%87%BA%E5%B8%AD%E9%87%91%E9%A6%AC%E5%BD%B1%E5%B1%95-%E9%99%BD%E5%85%89%E5%A5%B3%E5%AD%90%E5%90%88%E5%94%B1%E5%9C%98-%E6%B4%BB%E5%8B%95-%E5%9C%96-103636908.html",
+      "headLine": "安心亞出席金馬影展「陽光女子合唱團」活動 (圖)",
+      "publishDate": "2025-11-18T10:36:36.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E5%AE%89%E5%BF%83%E4%BA%9E%E5%87%BA%E5%B8%AD%E9%87%91%E9%A6%AC%E5%BD%B1%E5%B1%95-%E9%99%BD%E5%85%89%E5%A5%B3%E5%AD%90%E5%90%88%E5%94%B1%E5%9C%98-%E6%B4%BB%E5%8B%95-%E5%9C%96-103636908.html\",\"headline\":\"安心亞出席金馬影展「陽光女子合唱團」活動 (圖)\",\"datePublished\":\"2025-11-18T10:36:36.000Z\",\"dateModified\":\"2025-11-18T10:36:36.000Z\",\"keywords\":[\"金馬影展\",\"信義威秀中庭\",\"安心亞\"],\"description\":\"金馬影展「陽光女子合唱團」宣傳活動18日晚間在台北信義威秀中庭登場，演員安心亞（圖）出席，開心揮手留影。\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo奇摩新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twmobi/icon/yahoo_tw_logo_structuredata_20200630.png\",\"width\":136,\"height\":60}},\"author\":{\"@type\":\"Person\",\"name\":\"The Central News Agency 中央通訊社\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"The Central News Agency 中央通訊社\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"中央社\",\"url\":\"http://www.cna.com.tw/\",\"logo\":{\"@type\":\"ImageObject\",\"width\":282,\"height\":134,\"url\":\"https://s.yimg.com/os/creatr-uploaded-images/2020-10/3ac7fa10-0867-11eb-9fff-a572ef106b09\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/MdPTFlJLh4ujE72YDdc7ZA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTEzNjk7Y2Y9d2VicA--/https://media.zenfs.com/zh-tw/cna.com.tw/0b5517975bb375a18bd40c9143bac4fa\",\"height\":800,\"width\":561},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/MdPTFlJLh4ujE72YDdc7ZA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTEzNjk7Y2Y9d2VicA--/https://media.zenfs.com/zh-tw/cna.com.tw/0b5517975bb375a18bd40c9143bac4fa\"}",
+      "content": "金馬影展「陽光女子合唱團」宣傳活動18日晚間在台北信義威秀中庭登場，演員安心亞（圖）出席，開心揮手留影。中央社記者趙世勳攝 114年11月18日安心亞出席金馬影展「陽光女子合唱團」活動 金馬影展「陽光女子合唱團」宣傳活動18日晚間在台 北信義威秀中庭登場，演員安心亞（圖）出席，開心 揮手留影。 中央社記者趙世勳攝 114年11月18日 ",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/MdPTFlJLh4ujE72YDdc7ZA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTEzNjk7Y2Y9d2VicA--/https://media.zenfs.com/zh-tw/cna.com.tw/0b5517975bb375a18bd40c9143bac4fa",
+      "imageProvider": "安心亞出席金馬影展「陽光女子合唱團」活動 金馬影展「陽光女子合唱團」宣傳活動18日晚間在台 北信義威秀中庭登場，演員安心亞（圖）出席，開心 揮手留影。 中央社記者趙世勳攝 114年11月18日",
+      "authorName": "The Central News Agency 中央通訊社",
+      "newsProvider": "中央社",
+      "suggestLine": ""
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E9%99%BD%E5%85%89%E5%A5%B3%E5%AD%90%E5%90%88%E5%94%B1%E5%9C%98-%E6%BC%94%E5%93%A1%E5%87%BA%E5%B8%AD%E9%87%91%E9%A6%AC%E5%BD%B1%E5%B1%95%E6%B4%BB%E5%8B%95-%E5%9C%96-103325279.html",
+      "headLine": "「陽光女子合唱團」演員出席金馬影展活動 (圖)",
+      "publishDate": "2025-11-18T10:33:25.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E9%99%BD%E5%85%89%E5%A5%B3%E5%AD%90%E5%90%88%E5%94%B1%E5%9C%98-%E6%BC%94%E5%93%A1%E5%87%BA%E5%B8%AD%E9%87%91%E9%A6%AC%E5%BD%B1%E5%B1%95%E6%B4%BB%E5%8B%95-%E5%9C%96-103325279.html\",\"headline\":\"「陽光女子合唱團」演員出席金馬影展活動 (圖)\",\"datePublished\":\"2025-11-18T10:33:25.000Z\",\"dateModified\":\"2025-11-18T10:33:25.000Z\",\"keywords\":[\"金馬影展\",\"信義威秀中庭\",\"翁倩玉\",\"孫淑媚\",\"陳意涵\",\"鍾欣凌\"],\"description\":\"金馬影展「陽光女子合唱團」宣傳活動18日晚間在台北信義威秀中庭舉行，演員孫淑媚（左起）、翁倩玉、安心亞、鍾欣凌與陳意涵一同亮相，在台上開心互動。\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo奇摩新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twmobi/icon/yahoo_tw_logo_structuredata_20200630.png\",\"width\":136,\"height\":60}},\"author\":{\"@type\":\"Person\",\"name\":\"The Central News Agency 中央通訊社\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"The Central News Agency 中央通訊社\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"中央社\",\"url\":\"http://www.cna.com.tw/\",\"logo\":{\"@type\":\"ImageObject\",\"width\":282,\"height\":134,\"url\":\"https://s.yimg.com/os/creatr-uploaded-images/2020-10/3ac7fa10-0867-11eb-9fff-a572ef106b09\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/DhYQoPfPphQzPuKy0fYwfw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTE2MDA7aD0xMDY2O2NmPXdlYnA-/https://media.zenfs.com/ko/cna.com.tw/33b25642200815133cf485851b2b0768\",\"height\":533,\"width\":800},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/DhYQoPfPphQzPuKy0fYwfw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTE2MDA7aD0xMDY2O2NmPXdlYnA-/https://media.zenfs.com/ko/cna.com.tw/33b25642200815133cf485851b2b0768\"}",
+      "content": "金馬影展「陽光女子合唱團」宣傳活動18日晚間在台北信義威秀中庭舉行，演員孫淑媚（左起）、翁倩玉、安心亞、鍾欣凌與陳意涵一同亮相，在台上開心互動。中央社記者趙世勳攝 114年11月18日「陽光女子合唱團」演員出席金馬影展活動 金馬影展「陽光女子合唱團」宣傳活動18日晚間在台 北信義威秀中庭舉行，演員孫淑媚（左起）、翁倩 玉、安心亞、鍾欣凌與陳意涵一同亮相，在台上開心 互動。 中央社記者趙世勳攝 114年11月18日 ",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/cdnWNIhojj5TZqgvMWT0Tg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTY0MDtjZj13ZWJw/https://media.zenfs.com/ko/cna.com.tw/33b25642200815133cf485851b2b0768",
+      "imageProvider": "「陽光女子合唱團」演員出席金馬影展活動 金馬影展「陽光女子合唱團」宣傳活動18日晚間在台 北信義威秀中庭舉行，演員孫淑媚（左起）、翁倩 玉、安心亞、鍾欣凌與陳意涵一同亮相，在台上開心 互動。 中央社記者趙世勳攝 114年11月18日",
+      "authorName": "The Central News Agency 中央通訊社",
+      "newsProvider": "中央社",
+      "suggestLine": ""
     }
   ],
-  "generatedAt": "2025-11-18T10:49:53.586Z"
+  "generatedAt": "2025-11-18T11:00:54.418Z"
 }
