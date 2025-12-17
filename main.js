@@ -373,7 +373,7 @@ async function scrapeYahooEntertainment() {
     let suggestLine = "";
     try {
       const response = await ai.models.generateContent({
-        model: "gemma-3-12b",
+        model: "gemini-2.5-flash",
         contents: `
           請先閱讀以下新聞內容，然後用一句話幫這則新聞產生吸引人的引導句子，讓人想點進去看內容。
           這個句子的文字數量請控制在 10 個字內。
