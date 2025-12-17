@@ -373,7 +373,7 @@ async function scrapeYahooEntertainment() {
     let suggestLine = "";
     try {
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemma-3-12b",
         contents: `
           請先閱讀以下新聞內容，然後用一句話幫這則新聞產生吸引人的引導句子，讓人想點進去看內容。
           這個句子的文字數量請控制在 10 個字內。
@@ -386,6 +386,7 @@ async function scrapeYahooEntertainment() {
   
           前面要請你閱讀的新聞內容如下：${content}`,
       });
+      await new Promise((r) => setTimeout(r, 2000)); // 等待2秒以確保不超過 rate limit
       suggestLine = response.text;
     } catch(e) {
       console.log(e);
