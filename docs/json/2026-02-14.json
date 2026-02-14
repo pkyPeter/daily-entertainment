@@ -564,7 +564,19 @@
       "authorName": "三立新聞網",
       "newsProvider": "三立新聞網 setn.com",
       "suggestLine": ""
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E5%9A%95%E5%9A%95%E7%B1%B3%E4%BD%9C%E8%80%85%E5%A7%AA%E5%A5%B3%E5%AE%88%E8%AD%B7%E6%A5%8A%E7%AC%99%E5%AE%B6%E6%97%8F%E8%97%9D%E8%A1%93%E9%81%BA%E7%94%A2-%E5%9C%96-103452003.html",
+      "headLine": "嚕嚕米作者姪女守護楊笙家族藝術遺產 (圖)",
+      "publishDate": "2026-02-14T10:34:52.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E5%9A%95%E5%9A%95%E7%B1%B3%E4%BD%9C%E8%80%85%E5%A7%AA%E5%A5%B3%E5%AE%88%E8%AD%B7%E6%A5%8A%E7%AC%99%E5%AE%B6%E6%97%8F%E8%97%9D%E8%A1%93%E9%81%BA%E7%94%A2-%E5%9C%96-103452003.html\",\"headline\":\"嚕嚕米作者姪女守護楊笙家族藝術遺產 (圖)\",\"datePublished\":\"2026-02-14T10:34:52.000Z\",\"dateModified\":\"2026-02-14T10:34:52.000Z\",\"keywords\":[\"朵貝．楊笙\",\"楊笙\",\"索菲亞\"],\"description\":\"索菲亞．楊笙是嚕嚕米作者朵貝．楊笙的親姪女，她現在不僅是家族事業的領導者，也是守護楊笙家族藝術遺產的核心人物。\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twnews/logo2024/PC/Yahoo_News@2x.png\",\"width\":310,\"height\":65},\"alternateName\":\"Yahoo奇摩新聞\"},\"author\":{\"@type\":\"Person\",\"name\":\"The Central News Agency 中央通訊社\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"The Central News Agency 中央通訊社\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"中央社\",\"url\":\"http://www.cna.com.tw/\",\"logo\":{\"@type\":\"ImageObject\",\"width\":282,\"height\":134,\"url\":\"https://s.yimg.com/os/creatr-uploaded-images/2020-10/3ac7fa10-0867-11eb-9fff-a572ef106b09\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/Ov5q3Fdjlqj..Ux1XahFHQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTE2MDA7aD05OTQ-/https://media.zenfs.com/zh-tw/cna.com.tw/d7735b709e58cb1ff2bb839745ae10eb\",\"height\":497,\"width\":800},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/Ov5q3Fdjlqj..Ux1XahFHQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTE2MDA7aD05OTQ-/https://media.zenfs.com/zh-tw/cna.com.tw/d7735b709e58cb1ff2bb839745ae10eb\"}",
+      "content": "索菲亞．楊笙是嚕嚕米作者朵貝．楊笙的親姪女，她現在不僅是家族事業的領導者，也是守護楊笙家族藝術遺產的核心人物。中央社記者巫祈麟赫爾辛基攝 115年2月14日嚕嚕米作者姪女守護楊笙家族藝術遺產 索菲亞．楊笙是嚕嚕米作者朵貝．楊笙的親姪女，她 現在不僅是家族事業的領導者，也是守護楊笙家族藝 術遺產的核心人物。 中央社記者巫祈麟赫爾辛基攝 115年2月14日 ",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/FbxcNUQ8Tz1f5_g98cMPBw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU5Ng--/https://media.zenfs.com/zh-tw/cna.com.tw/d7735b709e58cb1ff2bb839745ae10eb",
+      "imageProvider": "嚕嚕米作者姪女守護楊笙家族藝術遺產 索菲亞．楊笙是嚕嚕米作者朵貝．楊笙的親姪女，她 現在不僅是家族事業的領導者，也是守護楊笙家族藝 術遺產的核心人物。 中央社記者巫祈麟赫爾辛基攝 115年2月14日",
+      "authorName": "The Central News Agency 中央通訊社",
+      "newsProvider": "中央社",
+      "suggestLine": ""
     }
   ],
-  "generatedAt": "2026-02-14T10:54:40.697Z"
+  "generatedAt": "2026-02-14T11:06:55.868Z"
 }
