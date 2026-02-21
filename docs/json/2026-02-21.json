@@ -456,7 +456,19 @@
       "authorName": "民視新聞網",
       "newsProvider": "民視",
       "suggestLine": ""
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E9%AB%98%E9%9B%84%E7%81%AB%E8%BB%8A%E7%AB%99%E6%B4%BB%E5%8A%9B%E6%BB%BF%E6%BB%BF-%E9%9F%93%E5%9C%8B%E5%95%A6%E5%95%A6%E9%9A%8A%E5%A5%B3%E7%A5%9Emingo%E7%8F%BE%E8%BA%AB%E6%89%93%E6%B0%A3-104259552.html",
+      "headLine": "高雄火車站活力滿滿! 韓國啦啦隊女神Mingo現身打氣",
+      "publishDate": "2026-02-21T10:42:59.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E9%AB%98%E9%9B%84%E7%81%AB%E8%BB%8A%E7%AB%99%E6%B4%BB%E5%8A%9B%E6%BB%BF%E6%BB%BF-%E9%9F%93%E5%9C%8B%E5%95%A6%E5%95%A6%E9%9A%8A%E5%A5%B3%E7%A5%9Emingo%E7%8F%BE%E8%BA%AB%E6%89%93%E6%B0%A3-104259552.html\",\"headline\":\"高雄火車站活力滿滿! 韓國啦啦隊女神Mingo現身打氣\",\"datePublished\":\"2026-02-21T10:42:59.000Z\",\"dateModified\":\"2026-02-21T10:42:59.000Z\",\"keywords\":[\"Mingo\",\"高雄火車站\",\"城市廣場\"],\"description\":\"南部中心／林樹銘、陳芷萍 高雄市報導高雄火車站的城市廣場「新高埕」21日下午舉辦名人快閃見面會，特別邀請深受小朋友們喜愛的柳丁哥哥、葡萄姐姐，以及韓國超人氣啦啦隊女神Mingo驚喜現身，與現場民眾近距離互動。Mingo也用韓文為上班族加油，馬年開春注入滿滿活力。\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twnews/logo2024/PC/Yahoo_News@2x.png\",\"width\":310,\"height\":65},\"alternateName\":\"Yahoo奇摩新聞\"},\"author\":{\"@type\":\"Person\",\"name\":\"民視新聞網\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"民視新聞網\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"民視\",\"url\":\"https://www.ftvnews.com.tw/\",\"logo\":{\"@type\":\"ImageObject\",\"width\":300,\"height\":50,\"url\":\"https://s.yimg.com/os/creatr-uploaded-images/2020-09/cc0a4a40-fd32-11ea-bdce-e1b4e3c6229a\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/YFo8XA3i.0XeTDR7E2OunA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUw/https://media.zenfs.com/ko/ftvn.com.tw/18edb3a81373c512869d13a092d6562b\",\"height\":675,\"width\":1200},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/YFo8XA3i.0XeTDR7E2OunA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUw/https://media.zenfs.com/ko/ftvn.com.tw/18edb3a81373c512869d13a092d6562b\"}",
+      "content": "高雄火車站活力滿滿! 韓國啦啦隊女神Mingo現身打氣",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/c9xpofJqqrDdDtebCi_ckQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MA--/https://media.zenfs.com/ko/ftvn.com.tw/18edb3a81373c512869d13a092d6562b",
+      "imageProvider": "高雄火車站活力滿滿! 韓國啦啦隊女神Mingo現身打氣",
+      "authorName": "民視新聞網",
+      "newsProvider": "民視",
+      "suggestLine": ""
     }
   ],
-  "generatedAt": "2026-02-21T10:47:44.102Z"
+  "generatedAt": "2026-02-21T10:54:54.325Z"
 }
