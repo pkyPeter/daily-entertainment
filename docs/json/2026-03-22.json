@@ -492,7 +492,31 @@
       "authorName": "鏡報 潘佳琪",
       "newsProvider": "鏡報",
       "suggestLine": ""
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E5%A4%A7%E6%B8%AF%E9%96%8B%E5%94%B1day-2-%E6%97%A5%E6%9C%AC%E8%81%B2%E5%84%AA%E6%A8%82%E5%9C%98-%E5%9C%98%E7%B5%90%E6%A8%82%E5%9C%98-%E9%A6%96%E5%BA%A6%E6%B5%B7%E5%A4%96%E6%BC%94%E5%87%BA-104602255.html",
+      "headLine": "大港開唱Day.2 日本聲優樂團\"團結樂團\"首度海外演出",
+      "publishDate": "2026-03-22T10:46:02.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E5%A4%A7%E6%B8%AF%E9%96%8B%E5%94%B1day-2-%E6%97%A5%E6%9C%AC%E8%81%B2%E5%84%AA%E6%A8%82%E5%9C%98-%E5%9C%98%E7%B5%90%E6%A8%82%E5%9C%98-%E9%A6%96%E5%BA%A6%E6%B5%B7%E5%A4%96%E6%BC%94%E5%87%BA-104602255.html\",\"headline\":\"大港開唱Day.2 日本聲優樂團\\\"團結樂團\\\"首度海外演出\",\"datePublished\":\"2026-03-22T10:46:02.000Z\",\"dateModified\":\"2026-03-22T10:46:02.000Z\",\"keywords\":[\"大港開唱\"],\"description\":\"南部中心／蘇晟維、廖錦雄 高雄報導22日大港開唱第二天，位在港邊的南霸天舞台，12點半的演出，從一大早就開始湧進滿滿的排隊人潮，人龍幾乎佔據整個駁二特區，甚至大港橋也被塞爆，原來大家都是為了看日本聲優組成的虛擬樂團\\\"團結樂團\\\"，首次跨足海外音樂祭演出。\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twnews/logo2024/PC/Yahoo_News@2x.png\",\"width\":310,\"height\":65},\"alternateName\":\"Yahoo奇摩新聞\"},\"author\":{\"@type\":\"Person\",\"name\":\"民視新聞網\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"民視新聞網\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"民視\",\"url\":\"https://www.ftvnews.com.tw/\",\"logo\":{\"@type\":\"ImageObject\",\"width\":300,\"height\":50,\"url\":\"https://s.yimg.com/os/creatr-uploaded-images/2020-09/cc0a4a40-fd32-11ea-bdce-e1b4e3c6229a\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/5DdA360NLDxylAMVbv6dmg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUw/https://media.zenfs.com/zh-tw/ftvn.com.tw/c1d70a933e1b34c1f92f7acc1374c740\",\"height\":675,\"width\":1200},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/5DdA360NLDxylAMVbv6dmg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUw/https://media.zenfs.com/zh-tw/ftvn.com.tw/c1d70a933e1b34c1f92f7acc1374c740\"}",
+      "content": "大港開唱Day.2 日本聲優樂團\"團結樂團\"首度海外演出",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/uYzQ33zKhqHgnX2dAvrwdA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MA--/https://media.zenfs.com/zh-tw/ftvn.com.tw/c1d70a933e1b34c1f92f7acc1374c740",
+      "imageProvider": "大港開唱Day.2 日本聲優樂團\"團結樂團\"首度海外演出",
+      "authorName": "民視新聞網",
+      "newsProvider": "民視",
+      "suggestLine": ""
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E6%89%8D%E8%AA%AA%E6%8E%A5%E4%B8%8D%E5%88%B0%E6%A5%AD%E9%85%8D-%E9%8D%BE%E6%98%8E%E8%BB%92%E7%8F%BE%E8%B9%A4-%E5%B0%8F%E7%B4%85%E6%9B%B8%E5%B8%82%E9%9B%86-%E5%BB%A3%E5%91%8A-%E8%A2%AB%E8%AB%B7%E5%90%91%E4%B8%AD%E5%9C%8B%E8%A6%81%E9%A3%AF%E6%88%90%E5%8A%9F-102915687.html",
+      "headLine": "才說接不到業配！鍾明軒現蹤「小紅書市集」廣告 被諷向中國要飯成功",
+      "publishDate": "2026-03-22T10:29:15.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E6%89%8D%E8%AA%AA%E6%8E%A5%E4%B8%8D%E5%88%B0%E6%A5%AD%E9%85%8D-%E9%8D%BE%E6%98%8E%E8%BB%92%E7%8F%BE%E8%B9%A4-%E5%B0%8F%E7%B4%85%E6%9B%B8%E5%B8%82%E9%9B%86-%E5%BB%A3%E5%91%8A-%E8%A2%AB%E8%AB%B7%E5%90%91%E4%B8%AD%E5%9C%8B%E8%A6%81%E9%A3%AF%E6%88%90%E5%8A%9F-102915687.html\",\"headline\":\"才說接不到業配！鍾明軒現蹤「小紅書市集」廣告 被諷向中國要飯成功\",\"datePublished\":\"2026-03-22T10:29:15.000Z\",\"dateModified\":\"2026-03-22T10:29:15.000Z\",\"keywords\":[\"鍾明軒\",\"政治立場轉變\"],\"description\":\"網紅鍾明軒政治立場轉變，近年拍攝赴中旅遊片、高喊中國很安全等，讓部分台灣網友難以接受，他最近上傳影片坦言「接不到置入合作」，因此陷入財務危機，直白表示「我也不想再裝了！」暫緩出國拍攝計畫；哭窮策略奏效，中國企業送暖，網友發現鍾明軒接了「小紅書市集」的官方廣告，他本人也透露最近收到50多封商案邀請。\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twnews/logo2024/PC/Yahoo_News@2x.png\",\"width\":310,\"height\":65},\"alternateName\":\"Yahoo奇摩新聞\"},\"author\":{\"@type\":\"Person\",\"name\":\"郭妤\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"郭妤\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"鏡新聞\",\"url\":\"https://www.mnews.tw\",\"logo\":{\"@type\":\"ImageObject\",\"width\":418,\"height\":94,\"url\":\"https://s.yimg.com/os/creatr-uploaded-images/2022-03/e0077bf0-aea0-11ec-bbb7-1591c8ce592b\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/zPjyOMFHSw3T7U9FmyXnEQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTIzMzQ7aD0xMjk2/https://media.zenfs.com/ko/mnews_tw_258/53314622bc512ddec266ea5c265c6b88\",\"height\":648,\"width\":1167},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/zPjyOMFHSw3T7U9FmyXnEQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTIzMzQ7aD0xMjk2/https://media.zenfs.com/ko/mnews_tw_258/53314622bc512ddec266ea5c265c6b88\"}",
+      "content": "網紅鍾明軒吐露接不到業配。（翻攝自鍾明軒YT）網紅鍾明軒政治立場轉變，近年拍攝赴中旅遊片、高喊中國很安全等，讓部分台灣網友難以接受，他最近上傳影片坦言「接不到置入合作」，因此陷入財務危機，直白表示「我也不想再裝了！」暫緩出國拍攝計畫；哭窮策略奏效，中國企業送暖，網友發現鍾明軒接了「小紅書市集」的官方廣告，他本人也透露最近收到50多封商案邀請。鍾明軒在影片透露，自媒體事業遭遇前所未有的挑戰，已經長達5個月沒有接到線上商案，期間也僅有1次線下活動合作，面臨財務危機，感慨過去即便遭炎上，流量與商單通常能維持穩定，沒到卻連續數月沒商業邀約。廣告廣告鍾明軒才喊窮，中國企業就立刻送暖，網友發現「小紅書市集」的官方廣告出現他的身影，掀起討論「立刻要飯成功了」、「中國就喜歡這種三姓家奴了」、「這張拍的沒有他自己平時發的好看哎」。鍾明軒的「小紅書市集」廣告。（翻攝自小紅書）其實鍾明軒已在影片說明，雖然財務吃緊，但是沒有破產，現在的作法只是先行止損，認為過去一直維持「成功自媒體人」的包裝，實際上是在透支自己的能量與存款，他直言「反正我也沒什麼好失去的」，因此決定不再繼續「演」那個形象。更多《鏡新聞》報導中國網友洩四叉貓個資嗆「法律無效」 台灣8網友跟風分享要被告了鍾小平稱「陸配樁腳棄中籍」 吳怡萱酸幻想 ：耍嘴皮議員令人羞愧下週汽、柴油雙漲！卓榮泰曝原本要漲15元 「要跟中油說謝謝」",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/hr5QNHbOC5tnLI3SyOft7A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTUzMw--/https://media.zenfs.com/ko/mnews_tw_258/53314622bc512ddec266ea5c265c6b88",
+      "imageProvider": "網紅鍾明軒吐露接不到業配。（翻攝自鍾明軒YT）",
+      "authorName": "郭妤",
+      "newsProvider": "鏡新聞",
+      "suggestLine": ""
     }
   ],
-  "generatedAt": "2026-03-22T10:49:17.851Z"
+  "generatedAt": "2026-03-22T10:55:27.738Z"
 }
