@@ -372,7 +372,19 @@
       "authorName": "FTNN新聞網",
       "newsProvider": "FTNN新聞網",
       "suggestLine": ""
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E5%BD%AD%E4%BD%B3%E6%85%A7%E7%9D%BD%E9%81%95%E5%8D%81%E5%B9%B4%E5%86%8D%E7%99%BB%E5%A4%A7%E9%A6%AC%E9%9B%B2%E9%A0%82%E9%96%8B%E5%94%B1-111829401.html",
+      "headLine": "彭佳慧睽違十年再登大馬雲頂開唱",
+      "publishDate": "2026-03-31T11:18:29.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E5%BD%AD%E4%BD%B3%E6%85%A7%E7%9D%BD%E9%81%95%E5%8D%81%E5%B9%B4%E5%86%8D%E7%99%BB%E5%A4%A7%E9%A6%AC%E9%9B%B2%E9%A0%82%E9%96%8B%E5%94%B1-111829401.html\",\"headline\":\"彭佳慧睽違十年再登大馬雲頂開唱\",\"datePublished\":\"2026-03-31T11:18:29.000Z\",\"dateModified\":\"2026-03-31T11:18:29.000Z\",\"keywords\":[\"彭佳慧\",\"歌迷\"],\"description\":\"記者戴淑芳／台北報導 金曲歌后彭佳慧睽違10年再登大馬雲頂開唱，國客台語三聲道全開…\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twnews/logo2024/PC/Yahoo_News@2x.png\",\"width\":310,\"height\":65},\"alternateName\":\"Yahoo奇摩新聞\"},\"author\":{\"@type\":\"Person\",\"name\":\"CDNS E\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"CDNS E\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"中華日報\",\"url\":\"http://www.cdns.com.tw\",\"logo\":{\"@type\":\"ImageObject\",\"width\":958,\"height\":367,\"url\":\"https://s.yimg.com/uu/api/res/1.2/MuX5XNljQZIQ_tAy3eDthQ--~B/aD0zNjc7dz05NTg7YXBwaWQ9eXRhY2h5b24-/http://l.yimg.com/os/155/2013/01/21/cdns-logo-jpg_101618.jpg\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/JNIq5t0sNvxjtguV8e5XjQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTE0Mzk-/https://media.zenfs.com/zh-tw/cdns.com.tw/f582c4f14bca56c703b3d669df5bfde1\",\"height\":1024,\"width\":683},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/JNIq5t0sNvxjtguV8e5XjQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTE0Mzk-/https://media.zenfs.com/zh-tw/cdns.com.tw/f582c4f14bca56c703b3d669df5bfde1\"}",
+      "content": "記者戴淑芳／台北報導金曲歌后彭佳慧睽違10年再登大馬雲頂開唱，國客台語三聲道全開制霸，化身「許願池女神」開放歌迷點歌，寵粉無極限。彭佳慧此次應邀重返雲頂開唱人氣爆棚，吸引了來自新、馬、台、港、上海、成都等各地歌迷特地前來朝聖，足見彭佳慧30年來用作品累積的深厚根基與無可撼動的市場號召力！為此，彭佳慧特別祭出「限定曲目」與3套全新華服雙重彩蛋，不僅大展鐵肺女王功力，一口氣演唱近30首出道至今膾炙人口的金曲，更在安可時開放歌迷點歌，沒想到竟讓現場氣氛宛如大型LIVE HOUSE，嗨到不行，不但歌迷點歌點到欲罷不能，彭佳慧更「唱上癮」數度安可隨點隨唱，完美唱功宛若「行走的點唱機」，讓苦等10年的大馬粉絲大呼過癮！」2026年正值彭佳慧出道30週年，大馬雲頂站成為她馬年開春的首場大型演出，展望未來音樂工作計劃，彭佳慧透露，《一路這樣愛過來》巡演將在四月暫告一段落，緊接著將全力投入30週年的全新作品與巡演規劃，她期許自己能持續「突破框架」，在華語與客語跨界領域挑戰更多不可能。",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/JNIq5t0sNvxjtguV8e5XjQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTE0Mzk-/https://media.zenfs.com/zh-tw/cdns.com.tw/f582c4f14bca56c703b3d669df5bfde1",
+      "imageProvider": null,
+      "authorName": "CDNS E",
+      "newsProvider": "中華日報",
+      "suggestLine": ""
     }
   ],
-  "generatedAt": "2026-03-31T11:13:19.945Z"
+  "generatedAt": "2026-03-31T11:28:46.130Z"
 }
