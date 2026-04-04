@@ -492,7 +492,31 @@
       "authorName": "林妏緹",
       "newsProvider": "鏡新聞",
       "suggestLine": ""
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E8%8C%83%E7%90%AA%E6%96%90%E8%AA%8D%E4%BA%86-%E6%89%BE%E9%A4%90%E5%BB%B3%E8%80%81%E9%97%86%E6%BB%BE%E5%BA%8A-60%E6%AD%B2%E6%89%8D%E9%AB%94%E9%A9%97%E5%AE%8C%E7%BE%8E%E6%80%A7%E7%B6%93%E9%A9%97-%E9%81%8E%E7%A8%8B%E5%85%A8%E8%AA%AA%E5%87%BA-105429837.html",
+      "headLine": "范琪斐認了「找餐廳老闆滾床」！60歲才體驗完美性經驗 過程全說出",
+      "publishDate": "2026-04-04T10:54:29.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E8%8C%83%E7%90%AA%E6%96%90%E8%AA%8D%E4%BA%86-%E6%89%BE%E9%A4%90%E5%BB%B3%E8%80%81%E9%97%86%E6%BB%BE%E5%BA%8A-60%E6%AD%B2%E6%89%8D%E9%AB%94%E9%A9%97%E5%AE%8C%E7%BE%8E%E6%80%A7%E7%B6%93%E9%A9%97-%E9%81%8E%E7%A8%8B%E5%85%A8%E8%AA%AA%E5%87%BA-105429837.html\",\"headline\":\"范琪斐認了「找餐廳老闆滾床」！60歲才體驗完美性經驗 過程全說出\",\"datePublished\":\"2026-04-04T10:54:29.000Z\",\"dateModified\":\"2026-04-04T10:54:29.000Z\",\"keywords\":[\"范琪斐\"],\"description\":\"即時中心／高睿鴻報導資深媒體人范琪斐雖已邁入60歲，但至今仍活躍於媒體圈，甚至還創辦自媒體，事業做得有聲有色；她吸引流量及關注度的能力，也可說是「寶刀未老」，最近更是自爆「約砲」經歷，引發不少網友熱議。事實上，她本來曾有一段穩定的婚姻關係，但2024年選擇與美籍墨西哥裔丈夫Roberto離婚；回歸單身後，范琪斐坦...\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twnews/logo2024/PC/Yahoo_News@2x.png\",\"width\":310,\"height\":65},\"alternateName\":\"Yahoo奇摩新聞\"},\"author\":{\"@type\":\"Person\",\"name\":\"民視新聞網\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"民視新聞網\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"民視\",\"url\":\"https://www.ftvnews.com.tw/\",\"logo\":{\"@type\":\"ImageObject\",\"width\":300,\"height\":50,\"url\":\"https://s.yimg.com/os/creatr-uploaded-images/2020-09/cc0a4a40-fd32-11ea-bdce-e1b4e3c6229a\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/zo0VGoGxkEHnAj.7S8Y6Hg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUw/https://media.zenfs.com/zh-tw/ftvn.com.tw/5ac5c2a41c86d88211f95e061b65039e\",\"height\":675,\"width\":1200},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/zo0VGoGxkEHnAj.7S8Y6Hg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUw/https://media.zenfs.com/zh-tw/ftvn.com.tw/5ac5c2a41c86d88211f95e061b65039e\"}",
+      "content": "",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/uG2Jg_IADA0ySI79U2hjbQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MA--/https://media.zenfs.com/zh-tw/ftvn.com.tw/5ac5c2a41c86d88211f95e061b65039e",
+      "imageProvider": null,
+      "authorName": "民視新聞網",
+      "newsProvider": "民視",
+      "suggestLine": ""
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E6%96%A5%E8%B3%87400%E8%90%AC%E8%B7%A8%E6%B5%B7%E8%BE%A6%E9%9F%B3%E6%A8%82%E6%9C%83-%E5%AE%8B%E9%80%B8%E6%B0%91%E7%8E%8750%E4%BD%8D%E8%97%9D%E4%BA%BA%E8%B5%B4%E5%A4%A7%E9%A6%AC-%E5%85%A8%E8%87%AA%E8%B2%BB-%E9%9B%B6%E9%85%AC%E5%8B%9E-%E6%BC%94%E5%87%BA-102500806.html",
+      "headLine": "斥資400萬跨海辦音樂會！宋逸民率50位藝人赴大馬 全自費「零酬勞」演出",
+      "publishDate": "2026-04-04T10:25:00.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E6%96%A5%E8%B3%87400%E8%90%AC%E8%B7%A8%E6%B5%B7%E8%BE%A6%E9%9F%B3%E6%A8%82%E6%9C%83-%E5%AE%8B%E9%80%B8%E6%B0%91%E7%8E%8750%E4%BD%8D%E8%97%9D%E4%BA%BA%E8%B5%B4%E5%A4%A7%E9%A6%AC-%E5%85%A8%E8%87%AA%E8%B2%BB-%E9%9B%B6%E9%85%AC%E5%8B%9E-%E6%BC%94%E5%87%BA-102500806.html\",\"headline\":\"斥資400萬跨海辦音樂會！宋逸民率50位藝人赴大馬 全自費「零酬勞」演出\",\"datePublished\":\"2026-04-04T10:25:00.000Z\",\"dateModified\":\"2026-04-04T10:25:00.000Z\",\"keywords\":[\"宋逸民\",\"藝起發光協會\",\"馬來西亞\"],\"description\":\"斥資400萬跨海辦音樂會！宋逸民率50位藝人赴大馬 全自費「零酬勞」演出\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twnews/logo2024/PC/Yahoo_News@2x.png\",\"width\":310,\"height\":65},\"alternateName\":\"Yahoo奇摩新聞\"},\"author\":{\"@type\":\"Person\",\"name\":\"記者 沈芳宇\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"記者 沈芳宇\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"EBC東森娛樂\",\"url\":\"https://star.ebc.net.tw/\",\"logo\":{\"@type\":\"ImageObject\",\"width\":900,\"height\":190,\"url\":\"https://s.yimg.com/os/creatr-uploaded-images/2025-05/d3966180-3acd-11f0-bbcb-b48901d3def0\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/4CDrPMrvykWzmmbTD0GLGA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMjU2/https://media.zenfs.com/ko/ebc_star_440/aa0a1701a05ab107c3e9c1e3a4e48517\",\"height\":628,\"width\":1200},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/4CDrPMrvykWzmmbTD0GLGA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMjU2/https://media.zenfs.com/ko/ebc_star_440/aa0a1701a05ab107c3e9c1e3a4e48517\"}",
+      "content": "宋逸民率領50位藝人前往馬來西亞。（圖／藝起發光Ｘ蒙福教會提供）由宋逸民與陳維齡夫妻檔帶領的藝起發光協會，自2024年起打造「STILL 我在這裡」巡迴音樂盛會，歷經兩年全台巡迴後，於2026年4月正式跨海到馬來西亞，並在今（4）日及明（5日）連續兩天在馬來西亞古晉蒙福教會演出，首場便吸引約10,000名觀眾湧入。宋逸民受訪時感慨表示，為了這次的首場海外演出，團隊歷經9個月的密集籌備，克服了語言障礙與軟硬體調度等重重挑戰。此外，本次參與的50位藝人皆是自費前往，全數為「無酬演出」，據悉，全體人員的食宿交通成本高達新台幣300萬至400萬元。廣告廣告宋逸民、陳維齡與50位藝人在馬來西亞舉辦音樂會。（圖／藝起發光Ｘ蒙福教會提供）宋逸民、陳維齡與50位藝人在馬來西亞舉辦音樂會。（圖／藝起發光Ｘ蒙福教會提供）音樂會由明星夫妻檔吳東諺、白家綺擔綱主持，開場集結近50位藝人登台，以震撼的聯合歌舞揭開序幕。演出陣容星光熠熠，不僅邀請到「五燈獎」與「六燈獎」得主陳艾美、林照玉獻唱原住民天籟，周子寒、小薰、陳宇風、葉家妤、鄧廣福、鄭尹翔、李柏翰等多位實力派藝人也接力帶來經典民歌組曲，現場氣氛既熱鬧又溫馨。【本文由東森娛樂提供，未經授權，請勿轉載！】更多東森娛樂報導●賈永婕突宣布爆料小S私事！小S幽默回擊：妳老公跟我告白●曾國城錄影崩潰！對「她」下跪哀求 失控畫面流出●宋達民、洪百榕女兒18歲了！女大十八變慶生照曝光",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/XqWPXoemAABKVhG0SIKTuw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTUwMg--/https://media.zenfs.com/ko/ebc_star_440/aa0a1701a05ab107c3e9c1e3a4e48517",
+      "imageProvider": "宋逸民率領50位藝人前往馬來西亞。（圖／藝起發光Ｘ蒙福教會提供）",
+      "authorName": "記者 沈芳宇",
+      "newsProvider": "EBC東森娛樂",
+      "suggestLine": ""
     }
   ],
-  "generatedAt": "2026-04-04T11:01:40.292Z"
+  "generatedAt": "2026-04-04T11:20:20.820Z"
 }
