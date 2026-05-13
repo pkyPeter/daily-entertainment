@@ -252,7 +252,31 @@
       "authorName": "實習編輯 蔡沛恆",
       "newsProvider": "EBC東森新聞",
       "suggestLine": ""
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E7%A7%BB%E5%B1%85%E8%87%BA%E7%81%A3%E5%BA%9C%E5%9F%8E-%E4%B8%B9%E9%BA%A5%E5%B7%A5%E7%A8%8B%E5%B8%ABdiego%E5%BE%A9%E5%88%BB%E5%8C%97%E6%AD%90%E5%B9%B8%E7%A6%8F%E8%89%B2%E5%BD%A9-071813059.html",
+      "headLine": "移居臺灣府城 丹麥工程師Diego復刻北歐幸福色彩",
+      "publishDate": "2026-05-13T12:01:02.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E7%A7%BB%E5%B1%85%E8%87%BA%E7%81%A3%E5%BA%9C%E5%9F%8E-%E4%B8%B9%E9%BA%A5%E5%B7%A5%E7%A8%8B%E5%B8%ABdiego%E5%BE%A9%E5%88%BB%E5%8C%97%E6%AD%90%E5%B9%B8%E7%A6%8F%E8%89%B2%E5%BD%A9-071813059.html\",\"headline\":\"移居臺灣府城 丹麥工程師Diego復刻北歐幸福色彩\",\"datePublished\":\"2026-05-13T12:01:02.000Z\",\"dateModified\":\"2026-05-13T12:01:02.000Z\",\"keywords\":[\"新住民\",\"Diego\",\"丹麥\"],\"description\":\"民視新聞／綜合報導丹麥是聯合國評比全球最幸福的國度，許多人趨之若鶩想要移居丹麥，但是新住民Diego反倒選擇落腳台灣，一頭鑽進臺南巷弄，為老房子妝點溫暖，這位來自丹麥的工程師，不只在老屋裡復刻歐陸家鄉味，更發揮他的設計天賦，將巷弄圍牆變身為色彩繽紛的打卡景點。對他而言，臺灣不只是旅居的站點，更是他實踐理想生活的實...\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twnews/logo2024/PC/Yahoo_News@2x.png\",\"width\":310,\"height\":65},\"alternateName\":\"Yahoo奇摩新聞\"},\"author\":{\"@type\":\"Person\",\"name\":\"民視新聞網\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"民視新聞網\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"民視\",\"url\":\"https://www.ftvnews.com.tw/\",\"logo\":{\"@type\":\"ImageObject\",\"width\":300,\"height\":50,\"url\":\"https://s.yimg.com/os/creatr-uploaded-images/2020-09/cc0a4a40-fd32-11ea-bdce-e1b4e3c6229a\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/9Rl7mHBQszZzBrGwzm8ivA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUw/https://media.zenfs.com/ko/ftvn.com.tw/4f05c8deacf4a32892b92df61f61d192\",\"height\":675,\"width\":1200},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/9Rl7mHBQszZzBrGwzm8ivA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUw/https://media.zenfs.com/ko/ftvn.com.tw/4f05c8deacf4a32892b92df61f61d192\"}",
+      "content": "移居臺灣府城 丹麥工程師Diego復刻北歐幸福色彩",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/CYsmwFf6yTQK6ztb2._5hQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MA--/https://media.zenfs.com/ko/ftvn.com.tw/4f05c8deacf4a32892b92df61f61d192",
+      "imageProvider": "移居臺灣府城 丹麥工程師Diego復刻北歐幸福色彩",
+      "authorName": "民視新聞網",
+      "newsProvider": "民視",
+      "suggestLine": ""
+    },
+    {
+      "link": "https://tw.news.yahoo.com/%E6%9E%97%E5%BF%97%E7%8E%B2%E5%B0%87%E4%BB%BB%E6%96%87%E7%AD%96%E9%99%A2%E8%91%A3%E4%BA%8B-%E6%98%94-%E7%A5%9D%E4%B8%AD%E5%9C%8B%E7%94%9F%E6%97%A5%E5%BF%AB%E6%A8%82-%E8%A2%AB%E6%8C%96%E5%87%BA-113000306.html",
+      "headLine": "林志玲將任文策院董事！昔「祝中國生日快樂」被挖出",
+      "publishDate": "2026-05-13T11:30:00.000Z",
+      "source": "{\"@context\":\"http://schema.org\",\"@type\":\"NewsArticle\",\"mainEntityOfPage\":\"https://tw.news.yahoo.com/%E6%9E%97%E5%BF%97%E7%8E%B2%E5%B0%87%E4%BB%BB%E6%96%87%E7%AD%96%E9%99%A2%E8%91%A3%E4%BA%8B-%E6%98%94-%E7%A5%9D%E4%B8%AD%E5%9C%8B%E7%94%9F%E6%97%A5%E5%BF%AB%E6%A8%82-%E8%A2%AB%E6%8C%96%E5%87%BA-113000306.html\",\"headline\":\"林志玲將任文策院董事！昔「祝中國生日快樂」被挖出\",\"datePublished\":\"2026-05-13T11:30:00.000Z\",\"dateModified\":\"2026-05-13T11:30:00.000Z\",\"keywords\":[\"林志玲\",\"顏擇雅\",\"文策院\"],\"description\":\"娛樂中心／周孟漢報導51歲的女星林志玲，雖然近期逐漸淡出螢光幕前，將重心放在家，但過去在演藝圈表現亮眼，有著許多經典作品。而在今（13）日，文策院宣布林志玲將於6月底，出任文策院董事一職。消息一出，外界反應兩極，知名作家顏擇雅就翻出林志玲曾在2023年，透過微博發文「慶祝新中國成立74週年」的截圖，強調「如果講出...\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Yahoo新聞\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/cv/apiv2/twnews/logo2024/PC/Yahoo_News@2x.png\",\"width\":310,\"height\":65},\"alternateName\":\"Yahoo奇摩新聞\"},\"author\":{\"@type\":\"Person\",\"name\":\"民視新聞網\",\"url\":\"\",\"jobTitle\":\"\"},\"creator\":{\"@type\":\"Person\",\"name\":\"民視新聞網\",\"url\":\"\",\"jobTitle\":\"\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"民視\",\"url\":\"https://www.ftvnews.com.tw/\",\"logo\":{\"@type\":\"ImageObject\",\"width\":300,\"height\":50,\"url\":\"https://s.yimg.com/os/creatr-uploaded-images/2020-09/cc0a4a40-fd32-11ea-bdce-e1b4e3c6229a\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://s.yimg.com/ny/api/res/1.2/CfIPSLUe1UossMTO2oN9uQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTIwNDg7aD0xMTUy/https://media.zenfs.com/zh-tw/ftvn.com.tw/35a0a36821fe7ece2062081de0c6df1f\",\"height\":576,\"width\":1024},\"thumbnailUrl\":\"https://s.yimg.com/ny/api/res/1.2/CfIPSLUe1UossMTO2oN9uQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTIwNDg7aD0xMTUy/https://media.zenfs.com/zh-tw/ftvn.com.tw/35a0a36821fe7ece2062081de0c6df1f\"}",
+      "content": "娛樂中心／周孟漢報導51歲的女星林志玲，雖然近期逐漸淡出螢光幕前，將重心放在家，但過去在演藝圈表現亮眼，有著許多經典作品。而在今（13）日，文策院宣布林志玲將於6月底，出任文策院董事一職。消息一出，外界反應兩極，知名作家顏擇雅就翻出林志玲曾在2023年，透過微博發文「慶祝新中國成立74週年」的截圖，強調「如果講出這句話的人要擔任中華民國納稅人供養的職位，我就認為不妥了」。林志玲將任文策院董事！昔喊「慶祝新中國成立」被挖出 作家怒開轟：越線了林志玲傳出將接任文策院董事一職。（圖／Taiwan Creative Content Fest）廣告廣告顏擇雅今（13）日透過臉書發文，貼出林志玲2023年在微博以「山河錦繡，盛世中華」，來慶祝新中國成立74週年的文章截圖，表示台灣依然有許多人認同中國，這就是台灣的政治現實，因此她那些講「我愛你中國」的台灣人，但她認為「慶祝新中國成立74週年」已超出她的底線，強調「這句話引申是「中華民國」在1949年已經滅亡」。林志玲將任文策院董事！昔喊「慶祝新中國成立」被挖出 作家怒開轟：越線了作家顏擇雅就翻出林志玲曾在2023年，透過微博發文「慶祝新中國成立74週年」的截圖。（圖／翻攝自顏擇雅臉書）文章中顏擇雅也坦言，有些人會辯稱「可以說中國人就是命賤，奴性深重，他們都自覺現在是盛世了，外人何必有意見？」、「 讚許中國被那樣統治，又不代表讚許其他地方也被同樣方式統治？」 她則感嘆「好吧，我必須說，這也是一種說法，雖有種族歧視之嫌，但我覺得很難反駁」。顏擇雅強調「如果講出這句話的人要擔任中華民國納稅人供養的職位，我就認為不妥了」，語重心長表示，歌頌「盛世中華」是在歌頌 1 種 靠暴力與言論箝制維持的政權，「對我來說，也超過了一條線，道德的線」。文章曝光後，立刻獲得不少網友討論，「中字一把刀，看林志玲的笑容直覺她好假？其實有實力賺人民幣 我們無話可說；只是就這麽輕聲細語把台灣踩在腳底下⋯也許台灣人真正的國慶日還未到來？」、「藝人稱讚當地我覺得沒關係，美國好萊塢明星到別的國家也是會這樣做，但是反過來詆毀自己的故鄉，就不能接受了」。原文出處：林志玲將任文策院董事！昔喊「慶祝新中國成立」被挖出 作家怒開轟：越線了更多民視新聞報導台灣比中共早成立！俞大㵢揭「主權時間線」打臉北京台股衝4萬！中媒唱衰酸「產業失衡」遭中國網友反嗆鄭麗文遭AI生成形象帶貨！中國男子下場曝光",
+      "imageUrl": "https://s.yimg.com/ny/api/res/1.2/czozpnpLEQ7mGTEhRCGzCA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MA--/https://media.zenfs.com/zh-tw/ftvn.com.tw/35a0a36821fe7ece2062081de0c6df1f",
+      "imageProvider": "林志玲將任文策院董事！昔喊「慶祝新中國成立」被挖出 作家怒開轟：越線了",
+      "authorName": "民視新聞網",
+      "newsProvider": "民視",
+      "suggestLine": ""
     }
   ],
-  "generatedAt": "2026-05-13T11:57:59.960Z"
+  "generatedAt": "2026-05-13T12:25:53.410Z"
 }
